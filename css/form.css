@@ -1,0 +1,170 @@
+/* Estilos de la sección "Contacto" */
+.content-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 48px;
+
+    .info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+
+        .contact-info {
+            text-align: left;
+            color: var(--accent-primary);
+            max-width: 600px;
+            width: 100%;
+            margin: 0px auto;
+            padding: 24px;
+
+            h2 {
+                font-size: 24px;
+                margin-bottom: 32px;
+            }
+
+            p {
+                font-size: 16px;
+                margin-bottom: 24px;
+            }
+
+            .social-media-profile {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                ul {
+                    display: flex;
+
+                    li {
+                        margin-right: 8px;
+                        transform: scale(1);
+
+                        :hover {
+                            transform: scale(1.5) translateY(-8px);
+                        }
+
+                        img {
+                            width: 32px;
+                            cursor: pointer;
+                            transition: transform 0.5s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    .contact-form {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 24px;
+        color: var(--accent-primary);
+
+        form {
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                color: var(--bg-dark);
+                font-size: medium;
+                font-weight: bold;
+                border-radius: var(--border-radius);
+                background-color: var(--accent-secondary);
+                transition: box-shadow 0.4s ease;
+            }
+
+            textarea {
+                height: 150px;
+            }
+
+            textarea:focus,
+            input:focus {
+                box-shadow: 3px 7px 7px rgb(88, 73, 114, 1);
+            }
+
+            textarea:hover,
+            input:hover,
+            button:hover {
+                box-shadow: 3px 7px 7px rgb(88, 73, 114, 1);
+            }
+
+            button {
+                background: var(--accent-secondary);
+                border-radius: var(--border-radius);
+                color: #eee;
+                font-weight: bold;
+                letter-spacing: 1.5px;
+                padding: 10px 20px;
+                cursor: pointer;
+                transition: box-shadow 0.4s ease;
+            }
+
+            button[type="submit"]:disabled {
+                background-color: #141719;
+                cursor: not-allowed;
+            }
+
+            /* Mensaje de errores "span" */
+            .error-message {
+                color: red;
+                font-size: 0.875rem;
+                margin-top: -0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            /* aplicar un border rojo a los campos de errores */
+            input.error,
+            textarea.error {
+                border-color: red;
+            }
+
+            /* contenedor de errores generales */
+            #errores {
+                color: red;
+                margin-bottom: 1rem;
+            }
+
+            /* Captcha */
+            .g-recaptcha {
+                margin-bottom: 1rem;
+            }
+        }
+
+    }
+}
+
+
+@media (max-width: 768px) {
+    .contact-form {
+        max-width: 90%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .contact-form {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .content-form {
+        .info {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
