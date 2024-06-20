@@ -2,7 +2,7 @@
     /* Colores del fondo*/
     --bg-dark: #222223;
     --bg-light: #949494;
-    --footer-bg: #949494;
+    --footer-bg: #141719;
 
     /* Colores de acentuacion */
     --accent-primary: #b2a5e6;
@@ -19,6 +19,39 @@
     --box-shadow: 4px 2px 17px #584972;
     --border-radius: 16px;
     --gradient: linear-gradient(-45deg, #D000F7, #24BAE3);
+
+    /* Tamaño del before */
+    --before-width: 65%;
+    --before-height: 87%;
+    --img-left: 11%;
+    --img-bottom: 10%;
+
+    /* Paleta de colores purple*/
+    --purple-50: #f7f5fd;
+    --purple-100: #eeedfa;
+    --purple-200: #e1def6;
+    --purple-300: #cac3ef;
+    --purple-400: #b2a5e6;
+    --purple-500: #927ad8;
+    --purple-600: #7f5ccb;
+    --purple-700: #6e4ab7;
+    --purple-800: #5c3e99;
+    --purple-900: #4d347e;
+    --purple-950: #302055;
+
+    /* Paleta de colores dark */
+    --dark-50: #f5f5f6;
+    --dark-100: #e6e6e7;
+    --dark-200: #d0d0d1;
+    --dark-300: #afb0b1;
+    --dark-400: #86868a;
+    --dark-500: #6b6b6f;
+    --dark-600: #5b5b5f;
+    --dark-700: #4e4f50;
+    --dark-800: #444446;
+    --dark-900: #3c3c3d;
+    --dark-950: #2b2b2b;
+    --dark-1000: #222223;
 }
 
 *,

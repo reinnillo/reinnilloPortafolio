@@ -1,9 +1,10 @@
 footer {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-dark);
+    background-color: var(--footer-bg);
     padding: var(--footer-padding);
     color: var(--accent-secundary);
 }
