@@ -125,15 +125,6 @@ let isClickBtnLearning = false;
 let isClickBtnCompetent = false;
 let isClickBtnAdvanced = false;
 
-let resetPositionElementTool = timeOut =>{
-    setTimeout(() => {
-        assignStyleToElementsArray(learningList, degOriginTools.styleResetTool);
-        assignStyleToElementsArray(competentList, degOriginTools.styleResetTool);
-        assignStyleToElementsArray(advancedList, degOriginTools.styleResetTool);
-        spinResetTool(toolsList);
-    }, timeOut);
-} 
-
 // Funciones para resetear la animacion de las herramientas
 const animationResetLearningTools = () => {
     for (let index = 0; index < learningList.length; index++) {
