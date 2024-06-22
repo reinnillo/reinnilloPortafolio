@@ -42,15 +42,31 @@
                         margin-right: 8px;
                         transform: scale(1);
 
-                        :hover {
-                            transform: scale(1.5) translateY(-8px);
-                        }
-
-                        img {
+                        svg {
                             width: 32px;
+                            height: 32px;
+                            fill: var(--accent-secondary);
                             cursor: pointer;
                             transition: transform 0.5s ease;
                         }
+                    }
+                    li:hover svg{
+                        transform: scale(1.2) translateY(-6px);
+                    }
+                    li:hover #insta {
+                        fill: #8f5da7;
+                    }
+                    li:hover #wpp {
+                        fill: #195838;
+                    }
+                    li:hover #mail {
+                        fill: #84a0b4;
+                    }
+                    li:hover #lkd {
+                        fill: #2b7fb7;
+                    }
+                    li:hover #git {
+                        fill: #101010;
                     }
                 }
             }
