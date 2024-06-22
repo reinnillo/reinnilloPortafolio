@@ -5,9 +5,7 @@ const btn_advanced = document.getElementById('advanced');
 const btn_reset = document.getElementById('reset');
 const circleTools = document.getElementById('circle-tools');
 const boxCircle = document.querySelector('.box-circle');
-
 const toolsList = circleTools.children;
-
 const deg = 360;
 const element = 12;
 const degForElement = deg / element;
@@ -322,6 +320,3 @@ btn_advanced.addEventListener('click', () => {
 
     resetAllTools()
 });
-
-
-
