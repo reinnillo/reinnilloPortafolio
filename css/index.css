@@ -59,7 +59,7 @@ header {
     .title {
         width: 100%;
         text-align: center;
-        margin-bottom: 24px;
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -156,10 +156,10 @@ header {
 }
 
 .find {
-    margin-top: 50px;
+    margin-top: 3.12rem;
 
-    h3 {
-        margin-bottom: 8px;
+    h4 {
+        margin-bottom: .5rem;
     }
 
     ul {
@@ -168,10 +168,10 @@ header {
         display: flex;
 
         li {
-            width: 50px;
-            height: 50px;
+            width: 3.12rem;
+            height: 3.12rem;
             box-shadow: var(--box-shadow);
-            margin: 10px 16px 10px 0;
+            margin: .62rem 1rem .62rem 0;
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -194,36 +194,38 @@ header {
 
 /* Project */
 .project {
-    margin-bottom: 48px;
+    margin-bottom: 3rem;
 
     .listProject {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-        padding-bottom: 50px;
-        margin-top: 50px;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        padding-bottom: 3.12rem;
+        margin-top: 3.12rem;
 
         .item {
             text-align: center;
             box-shadow: var(--box-shadow);
-            padding: 16px;
+            padding: 1rem;
             border-radius: var(--border-radius);
             font-weight: bold;
             font-size: large;
 
             img {
-                width: 400px;
+                width: 100%;
                 object-fit: cover;
             }
 
             .name {
-                margin-bottom: 16px;
+                margin-bottom: 1rem;
             }
 
             .description {
                 font-weight: 300;
                 text-align: left;
-                margin-bottom: 16px;
+                margin-bottom: 1rem;
             }
 
             .box-icon {
@@ -240,12 +242,12 @@ header {
                 }
 
                 .tech-icons {
-                    gap: 8px;
+                    gap: .5rem;
 
                     li {
                         a {
                             img {
-                                width: 24px;
+                                width: 1.5rem;
                             }
                         }
                     }
@@ -253,11 +255,11 @@ header {
 
                 .btn-visit-site {
                     background-color: #4e4e53cf;
-                    border-radius: 16px;
-                    padding: 0px 4px;
+                    border-radius: 1rem;
+                    padding: 0 .25rem;
                     cursor: pointer;
                     color: #b2a5e6;
-                    margin-right: 16px;
+                    margin-right: 1rem;
                 }
             }
         }
@@ -278,7 +280,7 @@ header {
 /* phone */
 @media screen and (max-width: 767px) {
     .container {
-        margin: 50px auto 0;
+        margin: 3.12rem auto 0;
     }
 
     header {
@@ -293,7 +295,7 @@ header {
             top: 0;
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: repeat(5, 70px);
+            grid-template-rows: repeat(5, 4.37rem);
             transform: translateX(-100%);
             transition: 0.5s;
         }
@@ -306,8 +308,8 @@ header {
     }
 
     header label {
-        width: 50px;
-        height: 50px;
+        width: 3.12rem;
+        height: 3.12rem;
         box-shadow: var(--box-shadow);
         border-radius: var(--border-radius);
         display: flex;
@@ -317,7 +319,7 @@ header {
 
     header .nav label {
         display: flex;
-        transform: translateX(20px);
+        transform: translateX(1.25rem);
     }
 
     .banner {
@@ -329,7 +331,7 @@ header {
 
         .avatar {
             grid-row-start: 1;
-            margin-bottom: 24px;
+            margin-bottom: 1.5rem;
 
             img {
                 bottom: 8%;
@@ -345,6 +347,31 @@ header {
     }
 
     .project {
-        grid-template-columns: 1fr;
+        .listProject {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .skill {
+
+        #circle-skills, #circle-tools {
+            width: 13rem !important;
+            height: 13rem !important;
+        }
+        .box-circle {
+            grid-template-columns: 1fr !important;
+            grid-template-rows: 1fr auto 1fr !important;
+
+            .overlay-skill {
+                opacity: 1 !important;
+                margin: .5rem auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
     }
 }

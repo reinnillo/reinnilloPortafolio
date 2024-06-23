@@ -5,8 +5,8 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: var(--footer-bg);
-    padding: var(--footer-padding);
-    color: var(--accent-secundary);
+    padding: 2rem;
+    color: var(--accent-secondary);
 }
 
 /* seccion de informacion del footer */
@@ -14,16 +14,4 @@ footer .section-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
-
-.info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 20px;
-
-    p {
-        margin: 6px 0;
-    }
 }

@@ -207,7 +207,7 @@ const resetAllTools = () => {
             // avanzado reset
             animationResetAdvancedTools();
         }
-    }, 8000)
+    }, 10000)
 
 }
 
