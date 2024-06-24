@@ -71,7 +71,7 @@ form.addEventListener('submit', async (event) => {
             body: new FormData(form)
         });
 
-        // validamos que si hay un error
+        // validamos si hay un error
         if (!response.ok) throw new Error('Error al enviar el formulario');
         alert('Formulario enviado con exito');
 

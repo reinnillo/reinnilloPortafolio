@@ -1,4 +1,5 @@
-// Botones
+import { verifyAndAddClass, filterElementsByClass, assignStyleToElementsArray } from './utils.js'
+
 const btn_learning = document.getElementById('learning');
 const btn_competent = document.getElementById('competent');
 const btn_advanced = document.getElementById('advanced');
@@ -80,27 +81,6 @@ const degOriginTools = {
         borderRadius: '100% 0% 50% 50% / 50% 0% 100% 50%',
     }
 }
-const filterLevelTool = (array, level) => {
-    const levelList = [];
-    [...array].forEach(element => {
-        if(element.classList[2] === level) {
-            levelList.push(element);
-        }
-    });
-    return levelList;
-};
-
-const verifyAndAddClass = (element, classToVerify) => {
-    if (!element.classList.contains(classToVerify)) {
-        element.classList.add(classToVerify);
-    };
-};
-
-const assignStyleToElementsArray = (array, styleObject) => {
-    array.forEach(element => {
-        Object.assign(element.style, styleObject);
-    });
-};
 
 const spinResetTool = array => {
     for (let index = 0; index < array.length; index++) {
@@ -110,15 +90,9 @@ const spinResetTool = array => {
     }
 }
 
-const isHiddenElement = (element) => {
-    const windowPointCenter = window.innerHeight;
-    let elementVerticalSpaceBetween_Top = element.getBoundingClientRect().top; 
-    return (elementVerticalSpaceBetween_Top > windowPointCenter) || (elementVerticalSpaceBetween_Top < 1);
-}
-
-const learningList = filterLevelTool(toolsList,'aprendizaje');
-const competentList = filterLevelTool(toolsList,'competente');
-const advancedList = filterLevelTool(toolsList,'avanzado');
+const learningList = filterElementsByClass(toolsList,'aprendizaje');
+const competentList = filterElementsByClass(toolsList,'competente');
+const advancedList = filterElementsByClass(toolsList,'avanzado');
 let isClickBtnLearning = false;
 let isClickBtnCompetent = false;
 let isClickBtnAdvanced = false;
@@ -207,7 +181,7 @@ const resetAllTools = () => {
             // avanzado reset
             animationResetAdvancedTools();
         }
-    }, 10000)
+    }, 15000)
 
 }
 
