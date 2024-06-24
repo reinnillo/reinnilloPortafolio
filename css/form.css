@@ -8,7 +8,6 @@
 
     .info {
         display: flex;
-        flex-wrap: wrap;
         flex-direction: row;
         align-items: center;
         width: 100%;
@@ -168,18 +167,17 @@
         max-width: 90%;
         width: 100%;
     }
+    .content-form {
+        .info {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+    }
 }
 
 @media (max-width: 500px) {
     .contact-form {
         max-width: 100%;
         width: 100%;
-    }
-
-    .content-form {
-        .info {
-            display: flex;
-            flex-direction: column;
-        }
     }
 }

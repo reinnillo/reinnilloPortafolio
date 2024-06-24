@@ -206,12 +206,15 @@ header {
         margin-top: 3.12rem;
 
         .item {
-            text-align: center;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
             box-shadow: var(--box-shadow);
             padding: 1rem;
             border-radius: var(--border-radius);
-            font-weight: bold;
-            font-size: large;
 
             img {
                 width: 100%;
@@ -230,8 +233,9 @@ header {
 
             .box-icon {
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-around;
                 align-items: center;
+                width: 100%;
 
                 .tech-icons,
                 li,
