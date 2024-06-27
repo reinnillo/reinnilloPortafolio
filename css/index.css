@@ -61,6 +61,28 @@ header {
         text-align: center;
         margin-bottom: 1.5rem;
     }
+
+    /* Estilos para animar la entrada de cada seccion al hacer scroll */
+}
+
+@keyframes entrarDesdeIzquierda {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes entrarDesdeDerecha {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
 
 .banner {
@@ -95,12 +117,14 @@ header {
             }
         }
     }
+
     .avatar:hover {
         --before-width: 76%;
         --before-height: 100%;
         --img-left: 17%;
         --img-bottom: 7%;
     }
+
     .avatar {
         text-align: center;
         position: relative;
@@ -132,7 +156,7 @@ header {
         z-index: -1;
         transition: all 0.5s;
     }
-    
+
 }
 
 @keyframes effectText {
@@ -215,10 +239,12 @@ header {
             box-shadow: var(--box-shadow);
             padding: 1rem;
             border-radius: var(--border-radius);
+            overflow: hidden;
 
             img {
                 width: 100%;
                 object-fit: cover;
+                transition: all 0.6s ease-out;
             }
 
             .name {
@@ -266,10 +292,26 @@ header {
                     margin-right: 1rem;
                 }
             }
+            .name, .description, .box-icon{
+                transition: all 1s ease-out;
+            }
         }
     }
 }
 
+
+/* ANIMACIONES */
+.animation-zoom {
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: left bottom;
+}
+.animation-fade-in {
+    opacity: 0;
+    transform: translateY(calc(100% + var(--padding-card)));
+}
+
+/* RESPONSIVIDAD */
 /* ipad */
 @media screen and (max-width: 1024px) {
     .banner .content h1 {
@@ -288,7 +330,7 @@ header {
     }
 
     header {
-        
+
 
         .nav {
             position: fixed;
@@ -361,10 +403,12 @@ header {
 
     .skill {
 
-        #circle-skills, #circle-tools {
+        #circle-skills,
+        #circle-tools {
             width: 13rem !important;
             height: 13rem !important;
         }
+
         .box-circle {
             grid-template-columns: 1fr !important;
             grid-template-rows: auto 1fr 1fr !important;
