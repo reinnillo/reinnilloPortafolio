@@ -1,0 +1,210 @@
+#home {
+    width: 100vw;
+    height: 85vh;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 1.2fr;
+    grid-template-rows: 1fr 0.5fr;
+    grid-template-areas:
+        "intro profile about"
+        "footer footer footer";
+    gap: 1rem;
+
+    /* Texto "reinnillo */
+    .intro {
+        grid-area: intro;
+        position: relative;
+
+        .vertical-text {
+            position: absolute;
+            font-size: 6.5rem;
+            white-space: nowrap;
+            left: 7.4rem;
+            bottom: 1.5rem;
+            transform-origin: left bottom;
+            transform: rotateZ(-90deg);
+        }
+    }
+
+    /* Foto de perfil*/
+    .profile {
+        grid-area: profile;
+        min-height: 28rem;
+        max-height: 28rem;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .circle {
+            width: 28rem;
+            height: 28rem;
+            background: linear-gradient(135deg, #000, rgba(181, 6, 76, 0.4), rgba(75, 145, 226, 0.4), rgba(82, 194, 255, 0.4), #000);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            & img {
+                width: 17rem;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
+        .profile-img {
+            width: 17rem;
+            height: auto;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    /* Informacion sobre mi */
+    .about {
+        grid-area: about;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            & .icon,
+            svg,
+            path {
+                cursor: pointer;
+            }
+
+            .icon:hover {
+                transform: scale(1.6);
+            }
+
+            .icon:hover+.icon,
+            .icon:has(+ .icon:hover) {
+                transform: scale(1.2);
+            }
+
+            & .icon {
+                margin: 0 0.3rem;
+                transition: all 0.3s;
+
+                svg {
+                    width: 2.2rem;
+                    height: 2.2rem;
+                    fill: var(--text-color);
+                }
+            }
+
+        }
+
+        & #cv-download{
+
+            & .button {
+                background: linear-gradient(135deg, #9783d2, #240c55);
+                color: white;
+                padding: 0.8rem 2rem;
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background 0.5s ease;
+            }
+            & .button:hover {
+                background: var(--gradient-secondary);
+            }
+        }
+    }
+
+    /* Carrusel del las herramientas */
+    footer {
+        grid-area: footer;
+        width: 100%;
+        max-height: 5rem;
+        padding: 1.5rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .carousel {
+            display: flex;
+            justify-content: center;
+            animation: scroll 90s linear infinite;
+
+            span {
+                margin: 0 1rem;
+            }
+        }
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    #home {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "intro"
+            "profile"
+            "about"
+            "footer";
+
+        & .intro {
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .vertical-text {
+                position: static;
+                transform: none;
+                font-size: 4rem;
+                text-align: center;
+            }
+        }
+
+        .profile {
+            min-height: 20rem;
+            max-height: 20rem;
+
+            .circle {
+                width: 20rem;
+                height: 20rem;
+            }
+
+            .profile-img {
+                width: 12rem;
+            }
+        }
+    }
+}

@@ -1,8 +1,8 @@
 // VARIABLES DEL FORMULARIO
+
 const form = document.querySelector('form');
 const nameInput = document.querySelector('#name-input');
 const emailInput = document.querySelector('#email-input');
-const subjectInput = document.querySelector('#subject-input');
 const messageInput = document.querySelector('#message-input');
 const submitBtn = document.getElementById('submit');
 // obtenemos cada input y textarea en una array
@@ -66,12 +66,12 @@ form.addEventListener('submit', async (event) => {
     
     try {
         // capturamos los datos para enviarse
-        let response = await fetch('https://formspree.io/f/xjvnnnrl', {
+        let response = await fetch('/submit', {
             method: 'POST',
             body: new FormData(form)
         });
 
-        // validamos si hay un error
+        // validamos que si hay un error
         if (!response.ok) throw new Error('Error al enviar el formulario');
         alert('Formulario enviado con exito');
 
