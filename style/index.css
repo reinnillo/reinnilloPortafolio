@@ -18,10 +18,12 @@
 
         .vertical-text {
             position: absolute;
-            font-size: 6.5rem;
+            font-size: calc(var(--title-font-size) + 4.5rem);
+            font-weight: 900;
             white-space: nowrap;
             left: 7.4rem;
             bottom: 1.5rem;
+            font-family: var(--title-font-family);
             transform-origin: left bottom;
             transform: rotateZ(-90deg);
         }
@@ -94,13 +96,16 @@
         gap: 1rem;
 
         h2 {
-            font-size: 2rem;
+            font-size: var(--title-font-size);
+            font-family: var(--title-font-family);
+            font-weight: 600;
             margin-bottom: 1rem;
         }
 
         p {
             text-align: left;
             margin-bottom: 1rem;
+            font-family: var(--text-font-family);
         }
 
         .social-icons {
@@ -149,6 +154,7 @@
 
             & .button {
                 background: var(--gradient-02);
+                font-family: var(--text-font-family);
                 color: white;
                 padding: 0.8rem 2rem;
                 border: none;

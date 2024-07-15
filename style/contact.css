@@ -9,7 +9,8 @@ body {
         text-align: center;
 
         h2 {
-            font-size: 2.5rem;
+            font-size: calc(var(--title-font-size) + 0.5rem);
+            font-family: var(--title-font-family);
             margin-bottom: 2rem;
             color: var(--light);
         }
@@ -150,6 +151,8 @@ body {
                             background: var(--gradient-02);
                             color: var(--text-color);
                             transition: background 0.3s, transform 0.3s;
+                            animation: 5s linear infinite forwards;
+                            animation-name: none;
                         }
 
                         .icon:hover {
@@ -169,6 +172,7 @@ body {
         }
     }
 }
+
 
 @media (max-width: 1200px) {
     body {

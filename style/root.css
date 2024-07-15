@@ -1,8 +1,8 @@
 :root {
     /* General */
-    --title-font-size: 4.5rem;
+    --title-font-size: 2rem;
     --title-font-family: "Montserrat Alternates", sans-serif;
-    --text-font-family: "Lato", Tahoma, Verdana, sans-serif;
+    --text-font-family: "Lato", Tahoma, Verdana, Arial, sans-serif;
     --b-radius: 1rem;
     --total-tools: 11;
     --width-tool: 4.5rem;
@@ -58,7 +58,7 @@ body,
 html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: var(--text-font-family);
     background: #000;
     backdrop-filter: blur(0.1rem);
     -webkit-backdrop-filter: blur(0.1rem);
