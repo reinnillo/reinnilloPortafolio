@@ -11,7 +11,7 @@ body {
         h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            color: var(--main-color);
+            color: var(--light);
         }
 
         .contact-container {
@@ -49,7 +49,7 @@ body {
                         border-radius: var(--b-radius);
                         font-size: 1rem;
                         color: var(--text-color);
-                        background: var(--bg-color);
+                        background: var(--dark);
                         box-shadow: var(--shadow);
                     }
 
@@ -79,7 +79,7 @@ body {
                     padding: 0.8rem 2rem;
                     font-size: 1rem;
                     color: var(--text-color);
-                    background-color: var(--main-color);
+                    background-color: var(--light);
                     border: none;
                     border-radius: var(--b-radius);
                     cursor: pointer;
@@ -88,7 +88,7 @@ body {
                 }
 
                 button[type="submit"]:hover {
-                    background-color: var(--secondary-color);
+                    background-color: var(--dark);
                     transform: scale(1.05);
                 }
 
@@ -113,7 +113,7 @@ body {
                 text-align: left;
                 padding: 1rem;
                 margin-top: 1rem;
-                background: var(--gradient-primary);
+                background: var(--gradient-00);
                 border-radius: var(--b-radius);
                 color: var(--text-color);
                 box-shadow: var(--shadow);
@@ -125,7 +125,7 @@ body {
                     h3 {
                         margin-bottom: 1rem;
                         font-size: 1.5rem;
-                        color: var(--secondary-color);
+                        color: var(--light);
                     }
 
                     p {
@@ -147,13 +147,13 @@ body {
                         .icon {
                             padding: 0.5rem 1rem;
                             border-radius: 5px;
-                            background: var(--main-color);
+                            background: var(--gradient-02);
                             color: var(--text-color);
-                            transition: background-color 0.3s, transform 0.3s;
+                            transition: background 0.3s, transform 0.3s;
                         }
 
                         .icon:hover {
-                            background-color: var(--secondary-color);
+                            background: var(--gradient-01);
                             transform: scale(1.05);
                         }
                     }

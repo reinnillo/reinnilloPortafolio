@@ -3,10 +3,6 @@ const root = document.documentElement;
 const darkModeButton = document.getElementById('dark-mode-button');
 const lightModeButton = document.getElementById('light-mode-button');
 
-const rectBox = document.querySelector('#box-btn').getBoundingClientRect();
-const boxSizeBtn = rectBox.width - darkModeButton.getBoundingClientRect().width;
-
-
 // Función para cambiar el modo DARCK
 function enableDarkMode() {
     // al documento le asignamos el atributo del tema elegido
@@ -16,10 +12,7 @@ function enableDarkMode() {
 
     lightModeButton.style.zIndex = 1;
     lightModeButton.style.display = 'block';
-    lightModeButton.style.transform = `translateX(0px)`;
-    lightModeButton.style.transition = 'transform 2s ease';
-    
-    darkModeButton.style.transform = `translateX(0px)`;
+
     darkModeButton.style.zIndex = 0;
 }
 
@@ -33,10 +26,7 @@ function enableLightMode() {
     // mostramos el boton
     darkModeButton.style.zIndex = 1;
     darkModeButton.style.display = 'block';
-    darkModeButton.style.transform = `translateX(${boxSizeBtn}px)`;
-    darkModeButton.style.transition = 'transform 2s ease';
 
-    lightModeButton.style.transform = `translateX(${boxSizeBtn}px)`;
     lightModeButton.style.zIndex = 0;
 }
 

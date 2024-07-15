@@ -127,7 +127,7 @@
             & .icon {
                 margin: 0 0.3rem;
                 transition: all 0.3s;
-                background: var(--gradient-3);
+                background: var(--gradient-02);
                 border-radius: var(--b-radius);
                 display: flex;
                 justify-content: center;
@@ -148,7 +148,7 @@
             margin-top: 1.5rem;
 
             & .button {
-                background: var(--gradient-3);
+                background: var(--gradient-02);
                 color: white;
                 padding: 0.8rem 2rem;
                 border: none;
@@ -160,7 +160,7 @@
             }
 
             & .button:hover {
-                background: var(--gradient-secondary);
+                background: var(--gradient-01);
             }
         }
     }
