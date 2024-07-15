@@ -90,7 +90,7 @@ body {
                     width: 0.9rem;
                     height: 0.9rem;
                     border-radius: 50%;
-                    background-color: var(--animation-pulse-clr);
+                    background: var(--gradient-3);
                     cursor: pointer;
                 }
             }

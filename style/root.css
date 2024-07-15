@@ -18,8 +18,10 @@
     --b-radius: 1rem;
     
     --core-gradient: #1e1338;
+    --core-gradient: #ae90f3;
     --gradient-primary: linear-gradient(135deg, #000, rgba(181, 6, 76, 0.4), rgba(75, 145, 226, 0.4), rgba(82, 194, 255, 0.4), #000);
     --gradient-secondary: linear-gradient(-45deg, #D000F7, #24BAE3);
+    --gradient-3: linear-gradient(135deg, #9783d2, #240c55);
     --animation-pulse-clr: #bab4b4;
 }
 

@@ -53,10 +53,10 @@
                 <h1 class="vertical-text">reinnillo</h1>
             </header>
             <div class="profile">
+                <div class="cap-circle"></div>
                 <div class="circle">
                     <img src="./asset/img/profile/alex-no-bg.png" alt="Alexander Reina">
                 </div>
-                <!-- <img src="./asset/img/profile/alex-no-bg.png" alt="Alexander Reina" class="profile-img"> -->
             </div>
 
             <!-- Section About me -->
@@ -93,7 +93,8 @@
                     </a>
                 </div>
                 <div id="cv-download">
-                    <a type="button" href="path/to/your/cv.pdf" download="Alexander_Reina_CV.pdf" aria-label="download cv Alexander Reina" class="button">Descargar CV</a>
+                    <a type="button" href="./asset/cv/reinnillo-cv.pdf" download="Alexander_Reina_CV.pdf"
+                        aria-label="download cv Alexander Reina" class="button">Descargar CV</a>
                 </div>
             </section>
             <footer>
@@ -155,25 +156,28 @@
         <section id="contact" class="section">
             <h2>Tienes un proyecto en mente?</h2>
             <div class="contact-container">
-                <form action="#" method="post">
+                <form action="https://formspree.io/f/xnnandba" method="POST">
                     <!-- Mostrar errores al usuarios -->
                     <div id="errores" role="alert" aria-live="assertive"></div>
                     <!--Campo para el nombre del usuario-->
                     <div class="form-group">
                         <label for="name-input">Nombre</label>
-                        <input type="text" id="name-input" name="name-input" required aria-describedby="name-input-error" pattern="[A-Za-z\s]+">
+                        <input type="text" id="name-input" name="name-input" required
+                            aria-describedby="name-input-error" pattern="[A-Za-z\s]+">
                         <span id="name-input-error" class="error-message"></span>
                     </div>
                     <!--Campo para el correo electronico del usuario-->
                     <div class="form-group">
                         <label for="email-input">Email</label>
-                        <input type="email" id="email-input" name="email-input" aria-describedby="email-input-error" required>
+                        <input type="email" id="email-input" name="email-input" aria-describedby="email-input-error"
+                            required>
                         <span id="email-input-error" class="error-message"></span>
                     </div>
                     <!--Campo para el mensaje del usuario-->
                     <div class="form-group">
                         <label for="message-input">Mensaje</label>
-                        <textarea id="message-input" name="message-input" rows="3" aria-describedby="message-input-error" required></textarea>
+                        <textarea id="message-input" name="message-input" rows="3"
+                            aria-describedby="message-input-error" required></textarea>
                         <span id="message-input-error" class="error-message"></span>
                     </div>
                     <!-- Recaptcha de google -->
@@ -232,8 +236,9 @@
     </div>
 
     <script type="module" src="./main.js"></script>
-    <script type="module" src="./js/ChangeModeTheme.js"></script>
+    <!-- <script type="module" src="./js/ChangeModeTheme.js"></script> -->
     <script type="module" src="./js/ValidateForm.js"></script>
+    <script type="module" src="./js/scaleMoveProfile.js"></script>
     <script type="module" src="./js/aviso.js"></script>
 </body>
 
