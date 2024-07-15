@@ -8,7 +8,6 @@ body {
         display: flex;
         justify-content: space-between;
         padding: 1rem;
-        background: rgb(0 0 0 / 50%);
         z-index: 1000;
         overflow: hidden;
 
@@ -53,7 +52,7 @@ body {
                         }
 
                         & .nav-link:hover {
-                            color: rgba(181, 6, 76, 0.5);
+                            color: var(--secondary-color);
                             transform: scale(1.3);
                         }
                     }

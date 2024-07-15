@@ -40,12 +40,12 @@
 
         .cap-circle {
             position: absolute;
-            width: 28rem;
-            height: 28rem;
+            width: 26rem;
+            height: 26rem;
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: 50%;
             z-index: 5;
-            animation: move-around 25s linear infinite forwards;
+            animation: move-around 20s linear infinite forwards;
         }
 
         .cap-circle:hover {
@@ -134,7 +134,7 @@
                 align-items: center;
                 width: 2.5rem;
                 height: 2.5rem;
-                
+
                 svg {
                     width: 2.2rem;
                     height: 2.2rem;
@@ -168,24 +168,14 @@
     /* Carrusel del las herramientas */
     footer {
         grid-area: footer;
-        width: 100%;
         max-height: 5rem;
+        width: 100%;
+        height: 100%;
         padding: 1.5rem;
         overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-
-        .carousel {
-            display: flex;
-            justify-content: center;
-            animation: scroll 90s linear infinite;
-
-
-            span {
-                margin: 0 1rem;
-            }
-        }
     }
 }
 
@@ -210,22 +200,27 @@
 /* Animar el circulo del perfil*/
 @keyframes move-around {
     0% {
-        transform: translateX(-1.5rem);
+        transform: translateX(-2rem);
+    }
+
+    20% {
+        transform: translate(-1.5, -1.5);
     }
 
     40% {
-        transform: translateY(-1.5rem);
+        transform: translateY(-1rem);
     }
 
     60% {
-        transform: translateX(1.5rem);
+        transform: translateX(2rem);
     }
 
     80% {
         transform: translateY(1.5rem);
     }
+
     100% {
-        transform: translateX(-1.5rem);
+        transform: translateX(-2rem);
     }
 }
 
@@ -268,6 +263,11 @@
         .profile {
             min-height: 20rem;
             max-height: 20rem;
+
+            & .cap-circle {
+                width: 18rem;
+                height: 18rem;
+            }
 
             .circle {
                 width: 20rem;
