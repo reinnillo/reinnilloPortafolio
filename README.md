@@ -145,4 +145,4 @@ Este repositorio contiene el código fuente de la segunda versión de mi portafo
 Desarrollado por Alexander Reina.
 
 Licencia
-Este proyecto está licenciado bajo la Licencia MIT.
+Este proyecto está licenciado bajo la Licencia ISC.
