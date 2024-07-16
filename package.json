@@ -4,7 +4,7 @@
     "hint": "^7.1.12"
   },
   "name": "reinnillo_portafolio",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "portafolio web Alexander D Reina P",
   "main": "main.js",
   "dependencies": {
