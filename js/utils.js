@@ -11,7 +11,7 @@ export const verifyAndAddClass = (element, classToVerify) => {
 };
 
 /**
- * Elimina una clase de un elemento si la tiene.
+ * Elimina una clase de un elemento si la tiene, si no, devuelve un mensaje en consola.
  * 
  * @param {HTMLElement} element - El elemento DOM al que se le va a eliminar la clase.
  * @param {string} classToRemove - El nombre de la clase que se va a eliminar.
@@ -19,6 +19,8 @@ export const verifyAndAddClass = (element, classToVerify) => {
 export const removeClassIfExists = (element, classToRemove) => {
     if (element.classList.contains(classToRemove)) {
         element.classList.remove(classToRemove);
+    } else {
+        console.log("El elemento no contiene la 'class' espesificada");
     }
 };
 

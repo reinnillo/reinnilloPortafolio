@@ -1,0 +1,105 @@
+body > #App > #home > footer > #tools-animation {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    perspective: 1000px;
+
+    .container-carousel {
+        width: calc(var(--width-tool) * var(--total-tools));
+        height: 3.125rem;
+        position: relative;
+        transform-style: preserve-3d;
+
+        .carousel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            animation: rotate 120s linear infinite;
+            transform-style: preserve-3d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .item {
+                position: absolute;
+                width: var(--width-tool);
+                height: 3.125rem;
+                backface-visibility: hidden;
+                color: var(--text-color);
+                font-family: var(--text-font-family);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1rem;
+            }
+
+            /* html */
+            .item:nth-child(1) {
+                transform: rotateY(32.72deg) translateZ(300px);
+            }
+
+            /* css */
+            .item:nth-child(2) {
+                transform: rotateY(65.44deg) translateZ(300px);
+            }
+
+            /* javascript */
+            .item:nth-child(3) {
+                transform: rotateY(98.16deg) translateZ(300px);
+            }
+
+            /* react */
+            .item:nth-child(4) {
+                transform: rotateY(130.88deg) translateZ(300px);
+            }
+
+            /* astro */
+            .item:nth-child(5) {
+                transform: rotateY(163.6deg) translateZ(300px);
+            }
+
+            /* nodejs */
+            .item:nth-child(6) {
+                transform: rotateY(196.32deg) translateZ(300px);
+            }
+
+            /* github */
+            .item:nth-child(7) {
+                transform: rotateY(229.04deg) translateZ(300px);
+            }
+
+            /* make */
+            .item:nth-child(8) {
+                transform: rotateY(261.76deg) translateZ(300px);
+            }
+
+            /* botpress */
+            .item:nth-child(9) {
+                transform: rotateY(294.48deg) translateZ(300px);
+            }
+
+            /* stak-ai */
+            .item:nth-child(10) {
+                transform: rotateY(327.2deg) translateZ(300px);
+            }
+
+            /* python */
+            .item:nth-child(11) {
+                transform: rotateY(359.92deg) translateZ(300px);
+            }
+        }
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}

@@ -1,0 +1,297 @@
+body {
+    #contact {
+        width: 90vw;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr;
+        gap: 1rem;
+        text-align: center;
+
+        h2 {
+            font-size: calc(var(--title-font-size) + 0.5rem);
+            font-family: var(--title-font-family);
+            margin-bottom: 2rem;
+            color: var(--light);
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            form {
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+
+                /* contenedor de errores generales */
+                #errores {
+                    color: red;
+                    margin-bottom: 1rem;
+                }
+
+                .form-group {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 1rem;
+
+                    label {
+                        font-size: 1rem;
+                        color: var(--text-color);
+                    }
+
+                    input[type="text"],
+                    input[type="email"],
+                    textarea {
+                        width: 80%;
+                        padding: 1rem;
+                        border-radius: var(--b-radius);
+                        font-size: 1rem;
+                        color: var(--text-color);
+                        background: var(--dark);
+                        box-shadow: var(--shadow);
+                    }
+
+                    /* aplicar un border rojo a los campos de errores */
+                    input.error,
+                    textarea.error {
+                        border-color: red;
+                    }
+
+                    /* Mensaje de errores "span" */
+                    .error-message {
+                        color: red;
+                        font-size: 0.875rem;
+                    }
+
+                    input[type="text"]:focus,
+                    input[type="email"]:focus,
+                    textarea:focus {
+                        border: none;
+                        padding: 1rem;
+                    }
+                }
+
+                button[type="submit"] {
+                    width: -moz-fit-content;
+                    width: fit-content;
+                    padding: 0.8rem 2rem;
+                    font-size: 1rem;
+                    color: var(--text-color);
+                    background-color: var(--light);
+                    border: none;
+                    border-radius: var(--b-radius);
+                    cursor: pointer;
+                    box-shadow: var(--shadow);
+                    transition: background-color 0.3s, transform 0.3s;
+                }
+
+                button[type="submit"]:hover {
+                    background-color: var(--dark);
+                    transform: scale(1.05);
+                }
+
+                button[type="submit"]:disabled {
+                    background-color: #141719;
+                    cursor: not-allowed;
+                }
+
+                /* Captcha */
+                .g-recaptcha {
+                    margin-bottom: 1rem;
+                }
+            }
+
+            /* Addres and map */
+            .contact-info {
+                height: 20rem;
+                width: 80%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                text-align: left;
+                padding: 1rem;
+                margin-top: 1rem;
+                background: var(--gradient-00);
+                border-radius: var(--b-radius);
+                color: var(--text-color);
+                box-shadow: var(--shadow);
+
+                address {
+                    display: flex;
+                    flex-direction: column;
+
+                    h3 {
+                        margin-bottom: 1rem;
+                        font-size: 1.5rem;
+                        color: var(--light);
+                    }
+
+                    p {
+                        margin-bottom: 0.5rem;
+                        font-size: 1rem;
+                    }
+
+                    .social-icons {
+                        display: flex;
+                        gap: 0.5rem;
+                        margin-bottom: 1rem;
+
+                        .icon,
+                        svg,
+                        path {
+                            cursor: pointer;
+                        }
+
+                        .icon {
+                            padding: 0.5rem 1rem;
+                            border-radius: 5px;
+                            background: var(--gradient-02);
+                            color: var(--text-color);
+                            transition: background 0.3s, transform 0.3s;
+                            animation: 5s linear infinite forwards;
+                            animation-name: none;
+                        }
+
+                        .icon:hover {
+                            background: var(--gradient-01);
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+
+                .map {
+
+                    iframe {
+                        border-radius: var(--b-radius);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1200px) {
+    body {
+        #contact {
+            grid-template-columns: 1fr;
+
+            .contact-container {
+                grid-template-columns: 1fr;
+
+                form,
+                .contact-info {
+                    grid-column: span 1;
+                }
+
+                form {
+                    text-align: center;
+
+                    .form-group label,
+                    .form-group input[type="text"],
+                    .form-group input[type="email"],
+                    .form-group textarea {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        #contact {
+            h2 {
+                line-height: 2.4rem;
+            }
+
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+
+                form {
+                    text-align: left;
+
+                    button[type="submit"] {
+                        padding: 0.6rem 1rem;
+                        font-size: 0.9rem;
+                    }
+                }
+
+                .contact-info {
+                    padding: 1rem;
+                    flex-direction: column;
+                    height: auto;
+
+                    h3 {
+                        font-size: 1.25rem;
+                    }
+
+                    address {
+
+                        p,
+                        .social-icons .icon {
+                            font-size: 0.9rem;
+                        }
+                    }
+
+                    .map iframe {
+                        width: 100%;
+                        height: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        #contact {
+            h2 {
+                line-height: 2.4rem;
+            }
+
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+
+                form {
+                    text-align: left;
+
+                    button[type="submit"] {
+                        font-size: 0.8rem;
+                    }
+                }
+
+                .contact-info {
+                    flex-direction: column;
+                    height: auto;
+
+                    h3 {
+                        font-size: 1.1rem;
+
+                        address {
+
+                            p {
+                                font-size: 0.8rem;
+                            }
+
+                            .social-icons .icon {
+                                padding: 0.3rem 0.5rem;
+                            }
+                        }
+
+                        .map iframe {
+                            height: 120px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

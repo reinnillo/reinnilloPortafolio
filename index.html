@@ -1,358 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexander Reina - Portafolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/root.css">
-    <link rel="stylesheet" href="./css/skill.css">
-    <link rel="stylesheet" href="./css/form.css">
-    <link rel="stylesheet" href="./css/footer.css">
+    <meta name="description" content="Portfolio de Alexander Reina, desarrollador front-end.">
+    <meta name="keywords" content="Alexander Reina, portfolio, desarrollador front-end, proyectos, contacto">
+    <meta name="author" content="Alexander Reina">
+    <title>Alexander Reina - Portfolio</title>
+    <link rel="stylesheet" href="./style/root.css">
+    <link rel="stylesheet" href="./style/header-desktop.css">
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/project.css">
+    <link rel="stylesheet" href="./style/contact.css">
+    <link rel="stylesheet" href="./style/carousel.css">
 </head>
 
 <body>
-
-    <header>
-        <div class="logo">
-            <a href="#home">
-                <img src="./asset/img/profile/alexander.jpg" alt="">
-            </a>
+    <header id="header-menu">
+        <div class="left">
+            <img src="./asset/img/profile/alex.jpg" alt="Logo de Alexander Reina">
+            <nav>
+                <ul>
+                    <li>
+                        <p class="nav-link" data-target="home">Inicio</p>
+                    </li>
+                    <li>
+                        <p class="nav-link" data-target="projects">Proyectos</p>
+                    </li>
+                    <li>
+                        <p class="nav-link" data-target="contact">Contacto</p>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <div class="navDiv">
-            <label for="menu">
-                <img src="./asset/icon/bx-menu.svg" alt="icon menu">
-            </label>
+        <div class="right">
+            <div class="theme-mode">
+                <div class="onda"></div>
+                <button id="light-mode-button" type="button" name="change-theme-mode" aria-label="change theme mode"></button>
+                <button id="dark-mode-button" type="button" name="change-theme-mode" aria-label="change theme mode"></button>
+            </div>
         </div>
-        <input type="checkbox" name="menu" id="menu">
-        <ul class="nav">
-            <label for="menu">
-                <img src="./asset/icon/bx-x.svg" alt="">
-            </label>
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#skill">Habilidades</a></li>
-            <li><a href="#project">Proyectos</a></li>
-            <li><a href="#form">Contacto</a></li>
-        </ul>
     </header>
 
-    <div class="container">
+    <!-- gradient and glass -->
+    <div id="bg-gradient"></div>
+    <div id="glass"></div>
+    <!-- ------------------ -->
 
-        <main class="banner" id="home">
-            <section class="content">
-                <p>BIENVENIDO A MI PORTAFOLIO</p>
-                <h1>
-                    Hola, Soy Alexander Reina, <br />
-                    un <div class="gradientText">
-                        <div class="job" data-job1="[Developer]." data-job2="{FrontEnd}."></div>
-                    </div>
-                </h1>
+    <div id="App">
+        <!-- Section home -->
+        <section id="home" class="section active">
+            <header class="intro">
+                <h1 class="vertical-text">reinnillo</h1>
+            </header>
+            <div class="profile">
+                <div class="cap-circle"></div>
+                <div class="circle">
+                    <img src="./asset/img/profile/alex-no-bg.png" alt="Alexander Reina">
+                </div>
+            </div>
 
+            <!-- Section About me -->
+            <section class="about">
+                <h2>Alexander Reina</h2>
                 <p>Soy un desarrollador front-end con experiencia en la creación de páginas web y asistentes virtuales
                     con IA integrada. Mi enfoque de trabajo combina inspiración y mi toque creativo. Además,
-                    soy una persona atlética por lo que valoro mucho la disciplina, así como la interacción
-                    social a través del
-                    gaming.</p>
-                <div class="find">
-                    <h4>Tienes un proyecto en mente? <br />contactame!</h4>
-                    <ul>
-                        <li><a target="_blank" rel="noopener" href="https://www.instagram.com/reinnillo/"><img
-                                    src="./asset/icon/bxl-instagram.svg" alt=""></a></li>
-                        <li><a target="_blank" rel="noopener" href=""><img src="./asset/icon/bxl-linkedin.svg"
-                                    alt="icon linkedin"></a></li>
-                        <li><a target="_blank" rel="noopener" href="https://wa.me/50768439588?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20tu%20trabajo.
-                            "><img src="./asset/icon/bxl-whatsapp.svg" alt=""></a></li>
-                        <li><a target="_blank" rel="noopener" href="https://github.com/reinnillo"><img
-                                    src="./asset/icon/bxl-github.svg" alt=""></a></li>
-                        <li><a title="a" target="_blank" rel="noopener" href="mailto:30todev@gmail.com"><img
-                                    src="./asset/icon/bx-envelope.svg" alt=""></a></li>
-                    </ul>
+                    soy una persona atlética por lo que valoro mucho la disciplina.</p>
+                <div class="social-icons">
+                    <!-- Instagram -->
+                    <a rel="noopener" target="_blank" href="https://www.instagram.com/reinnillo/" class="icon"
+                        aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#aaa">
+                            <path
+                                d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z" />
+                            <circle cx="11.994" cy="11.979" r="3.003" />
+                        </svg>
+                    </a>
+                    <!-- GitHub -->
+                    <a rel="noopener" target="_blank" href="https://github.com/reinnillo" class="icon"
+                        aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#aaa">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z" />
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a rel="noopener" target="_blank" href="https://www.linkedin.com/in/alexander-d-reina-p-737626318/"
+                        class="icon" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#aaa">
+                            <path
+                                d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z" />
+                        </svg>
+                    </a>
+                </div>
+                <div id="cv-download">
+                    <a type="button" href="./asset/cv/reinnillo-cv.pdf" download="Alexander_Reina_CV.pdf"
+                        aria-label="download cv Alexander Reina" class="button">Descargar CV</a>
                 </div>
             </section>
-            <section class="avatar">
-                <img src="./asset/img/profile/alexander.jpg" alt="">
-            </section>
-        </main>
 
-        <!-- Project -->
-        <section class="project" id="project">
-            <h3 class="title">PROYECTOS</h3>
-            <div class="listProject">
-                <!-- Proyecto 1 -->
-                <div class="item">
-                    <img src="./asset/img/web-fotografo/wf-home.png" class="animation-zoom" alt="Página principal del sitio web del fotógrafo">
-                    <div class="name animation-fade-in">Web Fotografo</div>
-                    <div class="description animation-fade-in">
-                        Descubre este elegante y funcional sitio web diseñado para un fotógrafo profesional, destacando
-                        su impresionante obra con una interfaz limpia y experiencia de usuario fluida.
-                    </div>
-                    <div class="box-icon animation-fade-in">
-                        <ul class="tech-icons">
-                            <li><a class="icon-html5"><img src="./asset/icon/bxl-html5.svg" alt="icon html"></a></li>
-                            <li><a class="icon-css3"><img src="./asset/icon/bxl-css3.svg" alt="icon css"></a></li>
-                            <li><a class="icon-javascript"><img src="./asset/icon/bxl-javascript.svg"
-                                        alt="icon javascript"></a></li>
-                        </ul>
-                        <a target="_blank" href="https://reinnillo.github.io/Web_Fotografo/" class="btn-visit-site"
-                            rel="noopener">visitar web</a>
-                    </div>
+            <!-- section Footer -->
+            <footer>
+                <div id="tools-animation">
+                    <section class="container-carousel">
+                        <div class="carousel">
+                            <p class="item">HTML</p>
+                            <p class="item">CSS</p>
+                            <p class="item">JavaScript</p>
+                            <p class="item">React</p>
+                            <p class="item">Astro</p>
+                            <p class="item">NodeJS</p>
+                            <p class="item">GitHub</p>
+                            <p class="item">Make</p>
+                            <p class="item">Botpress</p>
+                            <p class="item">Stack-AI</p>
+                            <p class="item">Python</p>
+                        </div>
+                    </section>
                 </div>
-                <!-- Proyecto 2-->
-                <div class="item">
-                    <img src="./asset/img/mi_portafolio/reinnillo_portafolio.png" class="animation-zoom" alt="portafolio web alexander">
-                    <div class="name animation-fade-in">Mi Portafolio Web</div>
-                    <div class="description animation-fade-in">
-                        Esta web está diseñado para presentar mis proyectos y habilidades en desarrollo web.
-                        Diseñe una interfaz clara y
-                        accesible.
-                    </div>
-                    <div class="box-icon animation-fade-in">
-                        <ul class="tech-icons">
-                            <li><a class="icon-html5"><img src="./asset/icon/bxl-html5.svg" alt="icon html"></a></li>
-                            <li><a class="icon-css3"><img src="./asset/icon/bxl-css3.svg" alt="icon css"></a></li>
-                            <li><a class="icon-javascript"><img src="./asset/icon/bxl-javascript.svg"
-                                        alt="icon javascript"></a></li>
-                        </ul>
-                        <a target="_blank" href="#home"
-                            class="btn-visit-site" rel="noopener">visitar web</a>
-                    </div>
-                </div>
-                <!-- Proyecto 3-->
-                <div class="item">
-                    <img src="./asset/img/web-restaurant/web_restaurant_menu.png" class="animation-zoom" alt="web de restaurante">
-                    <div class="name animation-fade-in">Web para Restaurante</div>
-                    <div class="description animation-fade-in">
-                        Diseñé este sitio web con menú interactivo, sistema de reservas y secciones para eventos,
-                        destacando funcionalidad y experiencia del usuario.
-                    </div>
-                    <div class="box-icon animation-fade-in">
-                        <ul class="tech-icons">
-                            <li><a class="icon-html5"><img src="./asset/icon/bxl-html5.svg" alt="icon html"></a></li>
-                            <li><a class="icon-css3"><img src="./asset/icon/bxl-css3.svg" alt="icon css"></a></li>
-                            <li><a class="icon-javascript"><img src="./asset/icon/bxl-javascript.svg"
-                                        alt="icon javascript"></a></li>
-                        </ul>
-                        <a class="btn-visit-site" rel="noopener" id="aviso">visitar web</a>
-                    </div>
-                </div>
-            </div>
+            </footer>
         </section>
 
-        <!-- Skill -->
-        <section class="skill" id="skill">
-            <div class="content-skill">
-                <h3 class="title">HABILIDADES Y HERRAMIENTAS</h3>
-                <p class="description-skill">
-                    Aquí están las tecnologías que domino y las habilidades que me hacen un
-                    profesional versátil.
+        <!-- Project Section -->
+        <section id="projects" class="section">
+            <div class="content-intro">
+                <h3>
+                    Bienvenido a mi portafolio de proyectos.
+                </h3>
+            </div>
+            <!-- Card_1 -->
+            <div class="project">
+                <img src="./asset/img/web-fotografo/web-fotografo.png" alt="Project 1">
+                <h3>Portafolio Laura</h3>
+                <p>Descubre este elegante y funcional sitio web diseñado para un fotógrafo profesional, destacando su
+                    impresionante obra con una interfaz limpia y experiencia de usuario fluida.
                 </p>
+                <a rel="noopener" href="https://reinnillo.github.io/Web_Fotografo/" target="_blank"
+                    class="button">Visitar Sitio</a>
             </div>
-
-            <div class="box-circle">
-                <!-- Descripcion de las habilidades -->
-                <div class="overlay-skill">
-                    <div class="des-ind"><a id="reset">Usa los botones para filtrarlas</a></div>
-                    <div class="box-des">
-                        <div class="des-buttom">
-                            <a class="level" id="learning">Aprendizaje</a>
-                        </div>
-                        <div class="des-buttom">
-                            <a class="level" id="competent">Competente</a>
-                        </div>
-                        <div class="des-buttom">
-                            <a class="level" id="advanced">Avanzado</a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div id="circle-tools">
-
-                    <div class="tool html avanzado">
-                        <p>HTML</p>
-                    </div>
-                    <div class="tool css competente">
-                        <p>CSS</p>
-                    </div>
-                    <div class="tool react aprendizaje">
-                        <p>React</p>
-                    </div>
-                    <div class="tool nodeJs aprendizaje">
-                        <p>Nodejs</p>
-                    </div>
-                    <div class="tool botpress avanzado">
-                        <p>Botpress</p>
-                    </div>
-                    <div class="tool make aprendizaje">
-                        <p>Make</p>
-                    </div>
-                    <div class="tool threejs aprendizaje">
-                        <p>Threejs</p>
-                    </div>
-                    <div class="tool stackai competente">
-                        <p>Stack-AI</p>
-                    </div>
-                    <div class="tool python aprendizaje">
-                        <p>Python</p>
-                    </div>
-                    <div class="tool git competente">
-                        <p>GitHub</p>
-                    </div>
-                    <div class="tool wordpress aprendizaje">
-                        <p>WordPress</p>
-                    </div>
-                    <div class="tool javaScript competente">
-                        <p>JavaScript</p>
-                    </div>
-                </div>
-
-                <ul id="circle-skills">
-                    <li class="soft-skill">Empatía</li>
-                    <li class="soft-skill">Comunicación efectiva</li>
-                    <li class="soft-skill">Asertividad</li>
-                    <li class="soft-skill">Trabajo en equipo</li>
-                    <li class="soft-skill">Amabilidad</li>
-                    <li class="soft-skill">Compromiso</li>
-                    <li class="soft-skill">Resolución de problemas</li>
-                </ul>
+            <!-- Card_2 -->
+            <div class="project">
+                <img src="./asset/img/web-restaurant/web_restaurant_menu.png" alt="Project 2">
+                <h3>Sazón Tropical</h3>
+                <p>Estoy trabajando este sitio web con menú interactivo, sistema de reservas y secciones para eventos,
+                    destacando funcionalidad y experiencia del usuario.
+                </p>
+                <a id="aviso" rel="noopener" href="" target="_blank" class="button">Visitar Sitio</a>
+            </div>
+            <!-- Card_3 -->
+            <div class="project">
+                <img src="./asset/img/mi_portafolio/portafolio-v2.png" alt="Project 3">
+                <h3>reinnillo</h3>
+                <p>Esta es la versión 2 de mi sito web, está diseñado para presentar mis proyectos y habilidades en
+                    desarrollo web. Diseñe una interfaz clara y accesible.
+                </p>
+                <a rel="noopener" href="https://reinnillo.github.io/reinnilloPortafolio/" target="_blank"
+                    class="button">Visitar Sitio</a>
             </div>
         </section>
 
-        <!-- Formulario -->
-        <section class="content-form">
-            <h3 class="title">CONTACTO</h3>
-            <div class="info">
-                <div class="contact-info">
-                    <h2 class='animation-fade-in'>Información</h2>
-                    <p class='animation-fade-in'><strong>Correo Electrónico:</strong> todev30@outlook.com</p>
-                    <p class='animation-fade-in'><strong>Teléfono:</strong> +507 6705 3532</p>
-
-                    <div class="social-media-profile animation-fade-in">
-                        <ul>
-                            <li>
-                                <a target="_blank" rel="noopener" href="https://www.instagram.com/reinnillo/"
-                                    alt="icon instagram opens in new tab">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        id="insta">
-                                        <path
-                                            d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z" />
-                                        <circle cx="16.806" cy="7.207" r="1.078" />
-                                        <path
-                                            d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" rel="noopener"
-                                    href="https://wa.me/50768439588?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20tu%20trabajo."
-                                    alt="icon whatsapp opens in new tab">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        id="wpp">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263" />
-                                    </svg>
-
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" rel="noopener" href="mailto:30todev@gmail.com"
-                                    alt="icon message opens in new tab">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        id="mail">
-                                        <path
-                                            d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" rel="noopener" alt="icon linkedin opens in new tab">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        id="lkd">
-                                        <circle cx="4.983" cy="5.009" r="2.188" />
-                                        <path
-                                            d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" rel="noopener" href="https://github.com/reinnillo"
-                                    alt="icon github opens in new tab">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        id="git">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z" />
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Dirección física (opcional)  asdfasdfddadf un afrlad fdoadsmadfdladfds -->
-                </div>
-                <div class="contact-form" id="form">
-                    <form method="POST">
-
-                        <!-- Mostrar errores al usuarios -->
-                        <div id="errores" role="alert" aria-live="assertive"></div>
-
-                        <!--Campo para el nombre del usuario-->
-                        <label for="name-input">Nombre:</label>
-                        <input type="text" id="name-input" name="name" autocomplete="name" required
-                            aria-describedby="name-input-error" placeholder="Nombre" pattern="[A-Za-z\s]+">
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Tienes un proyecto en mente?</h2>
+            <div class="contact-container">
+                <form action="https://formspree.io/f/xnnandba" method="POST">
+                    <!-- Mostrar errores al usuarios -->
+                    <div id="errores" role="alert" aria-live="assertive"></div>
+                    <!--Campo para el nombre del usuario-->
+                    <div class="form-group">
+                        <label for="name-input">Nombre</label>
+                        <input type="text" id="name-input" name="name-input" required
+                            aria-describedby="name-input-error" pattern="[A-Za-z\s]+">
                         <span id="name-input-error" class="error-message"></span>
-
-                        <!--Campo para el correo electronico del usuario-->
-                        <label for="email-input">Correo Electrónico:</label>
-                        <input type="email" id="email-input" name="email" autocomplete="email" required
-                            aria-describedby="email-input-error" placeholder="E-mail">
+                    </div>
+                    <!--Campo para el correo electronico del usuario-->
+                    <div class="form-group">
+                        <label for="email-input">Email</label>
+                        <input type="email" id="email-input" name="email-input" aria-describedby="email-input-error"
+                            required>
                         <span id="email-input-error" class="error-message"></span>
-
-                        <label for="subject-input">Asunto:</label>
-                        <input type="text" id="subject-input" name="subject" placeholder="Asunto" required="">
-                        <span id="subject-input-error" class="error-message"></span>
-
-                        <!--Campo para el mensaje del usuario-->
-                        <label for="message-input">Mensaje:</label>
-                        <textarea id="message-input" name="message" placeholder="Mensaje"
+                    </div>
+                    <!--Campo para el mensaje del usuario-->
+                    <div class="form-group">
+                        <label for="message-input">Mensaje</label>
+                        <textarea id="message-input" name="message-input" rows="3"
                             aria-describedby="message-input-error" required></textarea>
                         <span id="message-input-error" class="error-message"></span>
+                    </div>
+                    <!-- Recaptcha de google -->
+                    <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+                    <button type="submit" id="submit" disabled="">Enviar</button>
+                </form>
+                <div class="contact-info">
+                    <address>
+                        <h3>Información de Contacto</h3>
+                        <p><strong>Dirección:</strong> Santiago, Veraguas, Panamá</p>
+                        <p><strong>Teléfono:</strong> +507 6705-3532</p>
+                        <p><strong>Email:</strong> todev30@outlook.com</p>
+                        <h3>Sígueme</h3>
+                        <div class="social-icons">
+                            <!-- Instagram -->
+                            <a rel="noopener" target="_blank" href="https://www.instagram.com/reinnillo/" class="icon"
+                                aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="#aaa">
+                                    <path
+                                        d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z" />
+                                    <circle cx="11.994" cy="11.979" r="3.003" />
+                                </svg>
+                            </a>
+                            <!-- GitHub -->
+                            <a rel="noopener" target="_blank" href="https://github.com/reinnillo" class="icon"
+                                aria-label="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="#aaa">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z" />
+                                </svg>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a rel="noopener" target="_blank"
+                                href="https://www.linkedin.com/in/alexander-d-reina-p-737626318/" class="icon"
+                                aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="#aaa">
+                                    <path
+                                        d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </address>
 
-                        <!-- Recaptcha de google -->
-                        <div class="g-recaptcha" data-sitekey="your-site-key"></div>
-
-                        <!--Boton de envio-->
-                        <button type="submit" id="submit">Enviar Mensaje</button>
-                    </form>
+                    <div class="map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d126409.95948197931!2d-81.0390967!3d8.0697037!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fae720dc6b9642d%3A0xf9d9887c1b087f04!2sSantiago%2C%20Provincia%20de%20Veraguas!5e0!3m2!1ses-419!2spa!4v1720815452761!5m2!1ses-419!2spa"
+                            width="300" height="200" allowfullscreen="" loading="lazy" title="map"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
         </section>
-
     </div>
-    <!-- Footer -->
-    <footer>
-        <section class="section-info">
-            <div class="info">
-                <p>2024 Alexander D Reina P</p>
-                <p>Santiago de Veraguas, Panamá</p>
-            </div>
-        </section>
-        <!-- futuras secciones del footer -->
-    </footer>
 
     <script type="module" src="./main.js"></script>
-    <script type="module" src="./js/skillSection.js"></script>
-    <script type="module" src="./js/form.js"></script>
-    <script type="module" src="./js/animationScroll.js"></script>
+    <script type="module" src="./js/ChangeModeTheme.js"></script>
+    <script type="module" src="./js/ValidateForm.js"></script>
+    <script type="module" src="./js/scaleMoveProfile.js"></script>
     <script type="module" src="./js/aviso.js"></script>
 </body>
 
