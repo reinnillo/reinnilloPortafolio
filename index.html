@@ -11,6 +11,11 @@
     <meta name="google-site-verification" content="1BAuRyn-Z6pamMIMMpBRJstF2xupvVi8IaDkj7_Wyig" />
     <title>Alexander Reina - Portafolio</title>
 
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <!-- Open Graph meta tags -->
     <meta property="og:title" content="Alexander Reina - Portafolio">
     <meta property="og:description" content="Portfolio de Alexander Reina, desarrollador front-end.">
@@ -28,8 +33,10 @@
     <!-- Favicon -->
     <link rel="icon" href="./asset/img/profile/logo.svg" type="image/svg+xml">
 
+    <!-- Style -->
     <link rel="stylesheet" href="./style/root.css">
     <link rel="stylesheet" href="./style/header-desktop.css">
+    <link rel="stylesheet" href="./style/menu-mobile.css">
     <link rel="stylesheet" href="./style/index.css">
     <link rel="stylesheet" href="./style/project.css">
     <link rel="stylesheet" href="./style/contact.css">
@@ -38,6 +45,7 @@
 </head>
 
 <body>
+    <!-- Menu Desktop -->
     <header id="header-menu">
         <div class="left">
             <img src="./asset/img/profile/logo.svg" alt="Logo de Alexander Reina - reinnillo">
@@ -51,6 +59,27 @@
                     aria-label="change theme mode"></button>
             </div>
         </div>
+    </header>
+
+    <!-- Menu mobile -->
+    <header id="menu-mobile">
+        <!-- button open menu -->
+        <div class="navDiv">
+            <label for="open-menu">
+                <img src="./asset/icon/menu.svg" alt="icon open menu">
+            </label>
+        </div>
+        <!-- menu -->
+        <ul class="nav">
+            <!-- button close menu -->
+            <label for="close-menu">
+                <img src="./asset/icon/x.svg" alt="icon close menu">
+            </label>
+            <li><a class="nav-link" data-target="home">Inicio</a></li>
+            <!-- <li><a href="#skill">Skill</a></li> -->
+            <li><a class="nav-link" data-target="projects">Projectos</a></li>
+            <li><a class="nav-link" data-target="contact">Contacto</a></li>
+        </ul>
     </header>
 
     <!-- gradient and glass -->
@@ -168,22 +197,22 @@
                     <div id="errores" role="alert" aria-live="assertive"></div>
                     <!--Campo para el nombre del usuario-->
                     <div class="form-group">
-                        <label for="name-input">Nombre</label>
+                        <label for="name-input">Nombre:</label>
                         <input type="text" id="name-input" name="name-input" required
                             aria-describedby="name-input-error" pattern="[A-Za-z\s]+">
                         <span id="name-input-error" class="error-message"></span>
                     </div>
                     <!--Campo para el correo electronico del usuario-->
                     <div class="form-group">
-                        <label for="email-input">Email</label>
+                        <label for="email-input">Email:</label>
                         <input type="email" id="email-input" name="email-input" aria-describedby="email-input-error"
                             required>
                         <span id="email-input-error" class="error-message"></span>
                     </div>
                     <!--Campo para el mensaje del usuario-->
                     <div class="form-group">
-                        <label for="message-input">Mensaje</label>
-                        <textarea id="message-input" name="message-input" rows="3"
+                        <label for="message-input">Mensaje:</label>
+                        <textarea id="message-input" name="message-input" rows="1"
                             aria-describedby="message-input-error" required></textarea>
                         <span id="message-input-error" class="error-message"></span>
                     </div>
@@ -261,6 +290,7 @@
 
     <script type="module" src="./main.js"></script>
     <script type="module" src="./js/ChangeModeTheme.js"></script>
+    <script type="module" src="./js/menuMobile.js"></script>
     <script type="module" src="./js/ValidateForm.js"></script>
     <script type="module" src="./js/scaleMoveProfile.js"></script>
     <script type="module" src="./js/aviso.js"></script>

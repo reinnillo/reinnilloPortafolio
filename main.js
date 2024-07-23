@@ -1,7 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.section');
-    
+
+    // animar el footer nav al abrir la web
+    setTimeout(() => {
+        const footerNav = document.querySelector('.footer-navigation');
+        footerNav.style.transform = 'translate(-50%,0%)';
+        footerNav.style.width = '55vw';
+    }, 700)
+
+    // navegacion de los elementos
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();

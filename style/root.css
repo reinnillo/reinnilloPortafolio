@@ -1,8 +1,8 @@
 :root {
     /* General */
     --title-font-size: 2rem;
-    --title-font-family: "Montserrat Alternates", sans-serif;
-    --text-font-family: "Lato", Tahoma, Verdana, Arial, sans-serif;
+    --title-font-family: "Exo", Arial, sans-serif;
+    --text-font-family: "Exo", Tahoma, Verdana, Arial, sans-serif;
     --b-radius: 1rem;
     --total-tools: 11;
     --width-tool: 4.5rem;
@@ -24,13 +24,13 @@
 
 :root[data-theme="dark"] {
     --core-gradient: var(--dark);
-    --background-page: linear-gradient(0deg, #000, var(--core-gradient), #000);
+    --background-page: linear-gradient(0deg, rgb(36, 30, 46), var(--core-gradient), rgb(36, 30, 46));
     --gradient-02: linear-gradient(135deg, var(--dark), var(--light));
 }
 
 :root[data-theme="light"] {
     --core-gradient: var(--light);
-    --background-page: linear-gradient(0deg, #000, var(--core-gradient), #000);
+    --background-page: linear-gradient(0deg, rgb(36, 30, 46), var(--core-gradient), rgb(36, 30, 46));
     --gradient-02: linear-gradient(135deg, var(--light), var(--dark));
     /* --shadow-01: 0 0px 5px var(--dark); */
 }
@@ -86,10 +86,9 @@ html {
 
     #App {
         width: 100vw;
-        height: 85vh;
+        height: 93vh;
         margin: auto;
-        margin-top: 6vh;
-        margin-bottom: 9vh;
+        margin-top: 7vh;
         display: flex;
         transition: transform 0.5s ease-in-out;
         overflow-x: hidden;
@@ -113,10 +112,8 @@ html {
     display: none;
     text-align: center;
     min-width: 100vw;
-    height: 85vh;
+    height: 93vh;
     margin: auto;
-    margin-top: 6vh;
-    margin-bottom: 9vh;
     padding: 2rem;
     flex-shrink: 0;
     transition: transform 0.5s ease-in-out;

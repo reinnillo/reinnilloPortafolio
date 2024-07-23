@@ -3,7 +3,7 @@ body {
     #header-menu {
         position: fixed;
         top: 0;
-        height: 6vh;
+        height: 7vh;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -57,6 +57,8 @@ body {
             margin-right: 1rem;
 
             .theme-mode {
+                height: 1rem;
+                width: 1rem;
                 position: relative;
                 display: flex;
                 align-items: center;
@@ -64,8 +66,8 @@ body {
 
                 .onda {
                     position: absolute;
-                    width: 2.5rem;
-                    height: 2.5rem;
+                    width: 1.5rem;
+                    height: 1.5rem;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -101,7 +103,7 @@ body {
     }
 
     100% {
-        transform: scale(2);
+        transform: scale(4);
         opacity: 0;
     }
 }

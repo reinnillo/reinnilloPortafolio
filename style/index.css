@@ -1,7 +1,7 @@
 #home {
     width: 100vw;
-    height: 85vh;
-    margin: 0 auto;
+    height: 93vh;
+    margin: auto;
     padding: 0 2rem;
     display: grid;
     grid-template-columns: 1.3fr 3fr 1.3fr;
@@ -20,7 +20,7 @@
             font-weight: 900;
             white-space: nowrap;
             left: 12.4rem;
-            bottom: 5.5rem;
+            bottom: 8.5rem;
             font-family: var(--title-font-family);
             transform-origin: left bottom;
             transform: rotateZ(-90deg);
@@ -245,8 +245,9 @@
             .vertical-text {
                 position: static;
                 transform: none;
-                font-size: 4rem;
                 text-align: center;
+                font-size: 5rem;
+                font-weight: 300;
             }
         }
 
