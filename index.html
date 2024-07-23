@@ -5,40 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio de Alexander Reina, desarrollador front-end.">
-    <meta name="keywords" content="Alexander Reina, portfolio, desarrollador front-end, proyectos, contacto">
+    <meta name="keywords"
+        content="Alexander Reina, reinnillo, @reinnillo, Reinnillo, portfolio, desarrollador front-end, proyectos, contacto, Santiago de Veraguas, Santiago, Veraguas, Panamá">
     <meta name="author" content="Alexander Reina">
-    <title>Alexander Reina - Portfolio</title>
+    <title>Alexander Reina - Portafolio</title>
+
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Alexander Reina - Portafolio">
+    <meta property="og:description" content="Portfolio de Alexander Reina, desarrollador front-end.">
+    <meta property="og:image" content="./asset/img/profile/logo.svg">
+    <meta property="og:url" content="https://reinnillo.github.io/reinnilloPortafolio/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alexander Reina - Portafolio">
+    <meta name="twitter:description" content="Portfolio de Alexander Reina, desarrollador front-end.">
+    <meta name="twitter:image" content="./asset/img/profile/alex.jpg">
+    <meta name="twitter:url" content="https://reinnillo.github.io/reinnilloPortafolio/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./asset/img/profile/logo.svg" type="image/svg+xml">
+
     <link rel="stylesheet" href="./style/root.css">
     <link rel="stylesheet" href="./style/header-desktop.css">
     <link rel="stylesheet" href="./style/index.css">
     <link rel="stylesheet" href="./style/project.css">
     <link rel="stylesheet" href="./style/contact.css">
     <link rel="stylesheet" href="./style/carousel.css">
+    <link rel="stylesheet" href="./style/nav-footer.css">
 </head>
 
 <body>
     <header id="header-menu">
         <div class="left">
-            <img src="./asset/img/profile/alex.jpg" alt="Logo de Alexander Reina">
-            <nav>
-                <ul>
-                    <li>
-                        <p class="nav-link" data-target="home">Inicio</p>
-                    </li>
-                    <li>
-                        <p class="nav-link" data-target="projects">Proyectos</p>
-                    </li>
-                    <li>
-                        <p class="nav-link" data-target="contact">Contacto</p>
-                    </li>
-                </ul>
-            </nav>
+            <img src="./asset/img/profile/logo.svg" alt="Logo de Alexander Reina - reinnillo">
         </div>
         <div class="right">
             <div class="theme-mode">
                 <div class="onda"></div>
-                <button id="light-mode-button" type="button" name="change-theme-mode" aria-label="change theme mode"></button>
-                <button id="dark-mode-button" type="button" name="change-theme-mode" aria-label="change theme mode"></button>
+                <button id="light-mode-button" type="button" name="change-theme-mode"
+                    aria-label="change theme mode"></button>
+                <button id="dark-mode-button" type="button" name="change-theme-mode"
+                    aria-label="change theme mode"></button>
             </div>
         </div>
     </header>
@@ -99,27 +108,6 @@
                         aria-label="download cv Alexander Reina" class="button">Descargar CV</a>
                 </div>
             </section>
-
-            <!-- section Footer -->
-            <footer>
-                <div id="tools-animation">
-                    <section class="container-carousel">
-                        <div class="carousel">
-                            <p class="item">HTML</p>
-                            <p class="item">CSS</p>
-                            <p class="item">JavaScript</p>
-                            <p class="item">React</p>
-                            <p class="item">Astro</p>
-                            <p class="item">NodeJS</p>
-                            <p class="item">GitHub</p>
-                            <p class="item">Make</p>
-                            <p class="item">Botpress</p>
-                            <p class="item">Stack-AI</p>
-                            <p class="item">Python</p>
-                        </div>
-                    </section>
-                </div>
-            </footer>
         </section>
 
         <!-- Project Section -->
@@ -129,35 +117,45 @@
                     Bienvenido a mi portafolio de proyectos.
                 </h3>
             </div>
-            <!-- Card_1 -->
-            <div class="project">
-                <img src="./asset/img/web-fotografo/web-fotografo.png" alt="Project 1">
-                <h3>Portafolio Laura</h3>
-                <p>Descubre este elegante y funcional sitio web diseñado para un fotógrafo profesional, destacando su
-                    impresionante obra con una interfaz limpia y experiencia de usuario fluida.
-                </p>
-                <a rel="noopener" href="https://reinnillo.github.io/Web_Fotografo/" target="_blank"
-                    class="button">Visitar Sitio</a>
-            </div>
-            <!-- Card_2 -->
-            <div class="project">
-                <img src="./asset/img/web-restaurant/web_restaurant_menu.png" alt="Project 2">
-                <h3>Sazón Tropical</h3>
-                <p>Estoy trabajando este sitio web con menú interactivo, sistema de reservas y secciones para eventos,
-                    destacando funcionalidad y experiencia del usuario.
-                </p>
-                <a id="aviso" rel="noopener" href="" target="_blank" class="button">Visitar Sitio</a>
-            </div>
-            <!-- Card_3 -->
-            <div class="project">
-                <img src="./asset/img/mi_portafolio/portafolio-v2.png" alt="Project 3">
-                <h3>reinnillo</h3>
-                <p>Esta es la versión 2 de mi sito web, está diseñado para presentar mis proyectos y habilidades en
-                    desarrollo web. Diseñe una interfaz clara y accesible.
-                </p>
-                <a rel="noopener" href="https://reinnillo.github.io/reinnilloPortafolio/" target="_blank"
-                    class="button">Visitar Sitio</a>
-            </div>
+            <section id="container-project">
+                <!-- Card_1 -->
+                <div class="project">
+                    <img src="./asset/img/web-fotografo/web-fotografo.png" alt="Project 1">
+                    <h3>Portafolio Laura</h3>
+                    <div class="project-des">
+                        <p>Descubre este elegante y funcional sitio web diseñado para un fotógrafo profesional, destacando
+                            su
+                            impresionante obra con una interfaz limpia y experiencia de usuario fluida.</p>
+                        <a rel="noopener" href="https://reinnillo.github.io/Web_Fotografo/" target="_blank"
+                            class="button">Visitar Sitio</a>
+                    </div>
+                </div>
+                <!-- Card_2 -->
+                <div class="project">
+                    <img src="./asset/img/web-restaurant/web_restaurant_menu.png" alt="Project 2">
+                    <h3>Sazón Tropical</h3>
+                    <div class="project-des">
+                        <p>Estoy trabajando este sitio web con menú interactivo, sistema de reservas y
+                            secciones para eventos,
+                            destacando funcionalidad y experiencia del usuario.
+                        </p>
+                        <a id="aviso" rel="noopener" href="" target="_blank" class="button">Visitar Sitio</a>
+                    </div>
+                </div>
+                <!-- Card_3 -->
+                <div class="project">
+                    <img src="./asset/img/mi_portafolio/portafolio-v2.png" alt="Project 3">
+                    <h3>reinnillo</h3>
+                    <div class="project-des">
+                        <p>Esta es la versión 2 de mi sito web, está diseñado para presentar mis proyectos y
+                            habilidades en
+                            desarrollo web. Diseñe una interfaz clara y accesible.
+                        </p>
+                        <a rel="noopener" href="https://reinnillo.github.io/reinnilloPortafolio/" target="_blank"
+                        class="button">Visitar Sitio</a>
+                    </div>
+                </div>
+            </section>
         </section>
 
         <!-- Contact Section -->
@@ -243,6 +241,23 @@
         </section>
     </div>
 
+    <!-- Section: Barra de navegacion -->
+    <footer class="center-content footer-navigation">
+        <div class="center-content footer-section"></div>
+        <div class="center-content footer-section">
+            <p class="nav-link" data-target="projects">Proyectos</p>
+        </div>
+        <div class="center-content footer-center">
+            <div class="center-content footer-circle">
+                <p class="nav-link" data-target="home">Inicio</p>
+            </div>
+        </div>
+        <div class="center-content footer-section">
+            <p class="nav-link" data-target="contact">Contacto</p>
+        </div>
+        <div class="center-content footer-section"></div>
+    </footer>
+
     <script type="module" src="./main.js"></script>
     <script type="module" src="./js/ChangeModeTheme.js"></script>
     <script type="module" src="./js/ValidateForm.js"></script>
@@ -250,7 +265,9 @@
     <script type="module" src="./js/aviso.js"></script>
     <!-- bot -->
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-    <script src="https://mediafiles.botpress.cloud/533bf202-5816-469f-95ce-c60478ddb731/webchat/config.js" defer></script>
+    <script src="https://mediafiles.botpress.cloud/533bf202-5816-469f-95ce-c60478ddb731/webchat/config.js"
+        defer></script>
+    <!-- - -->
 </body>
 
 </html>

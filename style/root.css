@@ -11,26 +11,28 @@
     --dark: #2c1952;
     --light: #ae90f3;
     --text-color: #fff;
+    --darkGlass: rgba(0, 0, 0, 0.5);
+    --animation-pulse-clr: #bab4b4;
+    --shadow-00: 0 8px 16px rgba(0, 0, 0, 0.75);
+    --shadow-01: 0 0px 5px var(--light);
 
     /* Gradient */
     --gradient-00: linear-gradient(135deg, #000, rgba(181, 6, 76, 0.4), rgba(75, 145, 226, 0.4), rgba(82, 194, 255, 0.4), #000);
     --gradient-01: linear-gradient(-45deg, #D000F7, #24BAE3);
 
-    --animation-pulse-clr: #bab4b4;
 }
 
 :root[data-theme="dark"] {
     --core-gradient: var(--dark);
     --background-page: linear-gradient(0deg, #000, var(--core-gradient), #000);
     --gradient-02: linear-gradient(135deg, var(--dark), var(--light));
-    --shadow: 0 0px 5px var(--light);
 }
 
 :root[data-theme="light"] {
     --core-gradient: var(--light);
     --background-page: linear-gradient(0deg, #000, var(--core-gradient), #000);
     --gradient-02: linear-gradient(135deg, var(--light), var(--dark));
-    --shadow: 0 0px 5px var(--dark);
+    /* --shadow-01: 0 0px 5px var(--dark); */
 }
 
 *,
@@ -85,7 +87,9 @@ html {
     #App {
         width: 100vw;
         height: 85vh;
-        margin-top: 15vh;
+        margin: auto;
+        margin-top: 6vh;
+        margin-bottom: 9vh;
         display: flex;
         transition: transform 0.5s ease-in-out;
         overflow-x: hidden;
@@ -110,8 +114,9 @@ html {
     text-align: center;
     min-width: 100vw;
     height: 85vh;
-    margin: 0 auto;
-    margin-bottom: 2rem;
+    margin: auto;
+    margin-top: 6vh;
+    margin-bottom: 9vh;
     padding: 2rem;
     flex-shrink: 0;
     transition: transform 0.5s ease-in-out;

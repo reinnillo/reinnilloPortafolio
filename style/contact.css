@@ -51,7 +51,7 @@ body {
                         font-size: 1rem;
                         color: var(--text-color);
                         background: var(--dark);
-                        box-shadow: var(--shadow);
+                        box-shadow: var(--shadow-01);
                     }
 
                     /* aplicar un border rojo a los campos de errores */
@@ -84,7 +84,7 @@ body {
                     border: none;
                     border-radius: var(--b-radius);
                     cursor: pointer;
-                    box-shadow: var(--shadow);
+                    box-shadow: var(--shadow-01);
                     transition: background-color 0.3s, transform 0.3s;
                 }
 
@@ -117,7 +117,7 @@ body {
                 background: var(--gradient-00);
                 border-radius: var(--b-radius);
                 color: var(--text-color);
-                box-shadow: var(--shadow);
+                box-shadow: var(--shadow-00);
 
                 address {
                     display: flex;
