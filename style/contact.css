@@ -223,7 +223,9 @@ body {
 
                     form {
                         text-align: left;
-                        width: 100%;
+                        width: 80%;
+                        border-radius: 1rem;
+                        box-shadow: var(--shadow-00);
                         padding: 1rem;
                         background: var(--light);
                         background: var(--core-gradient);

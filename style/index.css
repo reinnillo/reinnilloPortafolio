@@ -1,9 +1,7 @@
 #home {
-    width: 100vw;
-    height: 93vh;
-    margin: auto;
-    padding: 0 2rem;
     display: grid;
+    width: 100vw;
+    padding: 0 2rem;
     grid-template-columns: 1.3fr 3fr 1.3fr;
     grid-template-rows: 1fr;
     grid-template-areas: "intro profile about";
@@ -19,8 +17,8 @@
             font-size: calc(var(--title-font-size) + 4.5rem);
             font-weight: 900;
             white-space: nowrap;
-            left: 12.4rem;
-            bottom: 8.5rem;
+            left: 10rem;
+            bottom: 1rem;
             font-family: var(--title-font-family);
             transform-origin: left bottom;
             transform: rotateZ(-90deg);
@@ -45,7 +43,7 @@
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: 50%;
             z-index: 5;
-            animation: move-around 20s linear infinite forwards;
+            animation: move-around 15s linear infinite forwards;
         }
 
         .cap-circle:hover {
@@ -68,11 +66,12 @@
                 height: auto;
                 object-fit: cover;
                 transform: translate(-39px, 22px) rotateZ(36deg) scale(1);
+                transition: transform 1s ease;
             }
 
+            /* scalar la img del perfil */
             .scale {
-                animation: scale 2s forwards;
-                animation-iteration-count: 1;
+                transform: translate(-33px, -20px) rotateZ(36deg) scale(1.2);
             }
         }
 
@@ -124,7 +123,7 @@
 
             .icon:hover+.icon,
             .icon:has(+ .icon:hover) {
-                transform: scale(1.1);
+                transform: scale(0.8);
             }
 
             & .icon {
@@ -167,24 +166,6 @@
                 background: var(--gradient-01);
             }
         }
-    }
-}
-
-/* scalar la img del perfil */
-@keyframes scale {
-    0% {
-        transform: translate(-39px, 22px) rotateZ(36deg) scale(1);
-
-    }
-
-    50% {
-        transform: translate(-33px, -20px) rotateZ(36deg) scale(1.2);
-
-    }
-
-    100% {
-        transform: translate(-39px, 22px) rotateZ(36deg) scale(1);
-
     }
 }
 

@@ -39,8 +39,8 @@
     <link rel="stylesheet" href="./style/header-desktop.css">
     <link rel="stylesheet" href="./style/menu-mobile.css">
     <link rel="stylesheet" href="./style/index.css">
-    <link rel="stylesheet" href="./style/project.css">
     <link rel="stylesheet" href="./style/contact.css">
+    <link rel="stylesheet" href="./style/project.css">
     <link rel="stylesheet" href="./style/carousel.css">
     <link rel="stylesheet" href="./style/nav-footer.css">
 </head>
@@ -78,7 +78,7 @@
             </label>
             <li><a class="nav-link" data-target="home">Inicio</a></li>
             <!-- <li><a href="#skill">Skill</a></li> -->
-            <li><a class="nav-link" data-target="projects">Projectos</a></li>
+            <li><a class="nav-link" data-target="projects">Proyectos</a></li>
             <li><a class="nav-link" data-target="contact">Contacto</a></li>
         </ul>
     </header>
@@ -89,6 +89,7 @@
     <!-- ------------------ -->
 
     <div id="App">
+
         <!-- Section home -->
         <section id="home" class="section active">
             <header class="intro">
@@ -143,51 +144,42 @@
 
         <!-- Project Section -->
         <section id="projects" class="section">
-            <div class="content-intro">
-                <h3>
-                    Bienvenido a mi portafolio de proyectos.
-                </h3>
+            <!-- filtro -->
+            <ul id="filter-list">
+                <li class="orbital-item" data-tech="html">HTML</li>
+                <li class="orbital-item" data-tech="css">CSS</li>
+                <li class="orbital-item" data-tech="js">JavaScript</li>
+                <li class="orbital-item" data-tech="python">Python</li>
+                <li class="orbital-item" data-tech="react-native">React Native</li>
+                <li class="orbital-item" data-tech="nodejs">NodeJS</li>
+                <li class="orbital-item" data-tech="botpress">Botpress</li>
+                <li class="orbital-item" data-tech="react">Wix Studio</li>
+            </ul>
+            <!-- contenedor para los proyectos -->
+            <div id="project-container">
+                <!-- card para cada proyecto -->
+                <section class="images-presentation-container">
+                    <!-- desktop -->
+                    <figure id="img-desktop"></figure>
+                    <figure id="img-mobile"></figure>
+                </section>
             </div>
-            <section id="container-project">
-                <!-- Card_1 -->
-                <div class="project">
-                    <img src="./asset/img/web-fotografo/web-fotografo.webp" alt="imagen de proyecto web de fotografo">
-                    <h3>Portafolio Laura</h3>
-                    <div class="project-des">
-                        <p>Descubre este elegante y funcional sitio web diseñado para un fotógrafo profesional,
-                            destacando
-                            su
-                            impresionante obra con una interfaz limpia y experiencia de usuario fluida.</p>
-                        <a rel="noopener" href="https://reinnillo.github.io/Web_Fotografo/" target="_blank"
-                            class="button">Visitar Sitio</a>
-                    </div>
+            <!-- lista de card para el carrusel -->
+            <div id="list-container">
+                <div id="counter-slider">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="prev arrow" width="32" height="32" fill="#ae90f3"
+                        viewBox="0 0 24 24">
+                        <path d="M13.939 4.939 6.879 12l7.06 7.061 2.122-2.122L11.121 12l4.94-4.939z" />
+                    </svg>
+                    <h2 class="counter">1/3</h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="next arrow" width="32" height="32" fill="#ae90f3"
+                        viewBox="0 0 24 24">
+                        <path d="M10.061 19.061 17.121 12l-7.06-7.061-2.122 2.122L12.879 12l-4.94 4.939z" />
+                    </svg>
                 </div>
-                <!-- Card_2 -->
-                <div class="project">
-                    <img src="./asset/img/web-restaurant/web_restaurant_menu.webp" alt="imagen de proyecto web de restaurante">
-                    <h3>Sazón Tropical</h3>
-                    <div class="project-des">
-                        <p>Estoy trabajando este sitio web con menú interactivo, sistema de reservas y
-                            secciones para eventos,
-                            destacando funcionalidad y experiencia del usuario.
-                        </p>
-                        <a id="aviso" rel="noopener" href="" target="_blank" class="button">Visitar Sitio</a>
-                    </div>
-                </div>
-                <!-- Card_3 -->
-                <div class="project">
-                    <img src="./asset/img/mi_portafolio/portafolio-v2.webp" alt="imagen de portafolio web de alexander reina">
-                    <h3>reinnillo</h3>
-                    <div class="project-des">
-                        <p>Esta es la versión 2 de mi sito web, está diseñado para presentar mis proyectos y
-                            habilidades en
-                            desarrollo web. Diseñe una interfaz clara y accesible.
-                        </p>
-                        <a rel="noopener" href="https://reinnillo.github.io/reinnilloPortafolio/" target="_blank"
-                            class="button">Visitar Sitio</a>
-                    </div>
-                </div>
-            </section>
+                <!-- card de cada proyecto - crear con js -->
+                <div id="slide"></div>
+            </div>
         </section>
 
         <!-- Contact Section -->
@@ -271,31 +263,46 @@
                 </div>
             </div>
         </section>
+
+    </div>
+
     </div>
 
     <!-- Section: Barra de navegacion -->
     <footer class="center-content footer-navigation">
+        <!-- vacio -->
         <div class="center-content footer-section"></div>
+        <!-- inicio -->
         <div class="center-content footer-section">
-            <p class="nav-link" data-target="projects">Proyectos</p>
+            <p class="nav-link" data-target="home">Inicio</p>
         </div>
+        <!-- proyectos -->
         <div class="center-content footer-center">
             <div class="center-content footer-circle">
-                <p class="nav-link" data-target="home">Inicio</p>
+                <p class="nav-link" data-target="projects">Proyectos</p>
             </div>
         </div>
+        <!-- contacto -->
         <div class="center-content footer-section">
             <p class="nav-link" data-target="contact">Contacto</p>
         </div>
-        <div class="center-content footer-section"></div>
+        <!-- prueba -->
+        <div class="center-content footer-section">
+            <p class="nav-link" data-target=""></p>
+        </div>
     </footer>
+    <!-- Button to open menu -->
+    <div id="openFooter">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19z"></path></svg>
+    </div>
 
     <script type="module" src="./main.js"></script>
     <script type="module" src="./js/ChangeModeTheme.js"></script>
     <script type="module" src="./js/menuMobile.js"></script>
     <script type="module" src="./js/ValidateForm.js"></script>
     <script type="module" src="./js/scaleMoveProfile.js"></script>
-    <script type="module" src="./js/aviso.js"></script>
+    <script type="module" src="./js/tools.js"></script>
+    <script type="module" src="./js/project.js"></script>
     <!-- bot -->
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
     <script src="https://mediafiles.botpress.cloud/533bf202-5816-469f-95ce-c60478ddb731/webchat/config.js"
