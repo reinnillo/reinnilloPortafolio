@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const App = document.getElementById('App');
     const navLinks = document.querySelectorAll(".nav-link");
     const sections = document.querySelectorAll(".section");
     const footerNav = document.querySelector(".footer-navigation");
@@ -16,12 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const enableFooterNav = () => {
         footerNav.classList.add('enable');
         openFooter_BTN.style.bottom = '-4.5rem';
+        App.style.transform = 'scale(0.9)';
     };
     // function to close Nav Footer
     const desableFooterNav = () => {
         footerNav.classList.remove('enable');
         // ocultar el footer mientras no se use
         openFooter_BTN.style.bottom = '-1.8rem';
+        App.style.transform = 'scale(1)';
     };
     openFooter_BTN.addEventListener('mouseenter', () => {
         startTimeout(500, enableFooterNav);
