@@ -10,34 +10,44 @@ const validateElement = document.querySelectorAll("input, textarea");
 
 // Función para detectar el tipo de dispositivo
 function detectarDispositivo() {
+    let dispositive;
+    
+    // Verificar si el dispositivo es una tablet
+    const isTablet = /Tablet|iPad/i.test(navigator.userAgent);
+
     // Verificar si el dispositivo es móvil
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
-        return 'Mobile';
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+    if (isTablet) {
+        dispositive = 'Tablet';
+    } else if (isMobile) {
+        dispositive = 'Mobile';
     } else {
-        return 'WebSite';
+        dispositive = 'WebSite';
     }
+    return dispositive;
 }
 
 // Funcion para obtener la hora actual del Email
 function obtenerFechaHoraPanama() {
     // Crear un objeto Date con la hora actual
     const fechaActual = new Date();
-  
+
     // Opciones para formatear la fecha y hora
     const opciones = {
-      timeZone: 'America/Panama',
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: true
+        timeZone: 'America/Panama',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
     };
-  
+
     // Formatear la fecha y hora según las opciones
     const fechaHoraPanama = fechaActual.toLocaleString('es-PA', opciones);
-  
+
     return fechaHoraPanama;
 }
 
@@ -132,7 +142,7 @@ form.addEventListener("submit", (event) => {
                 alert("Formulario enviado con exito 😍.");
                 return res.json();
             })
-            // .then((data) => console.log(data));
+        // .then((data) => console.log(data));
 
         // reseteamos el formulario
         form.reset();
