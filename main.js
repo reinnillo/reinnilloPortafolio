@@ -6,19 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const openFooter_BTN = document.getElementById('openFooter');
     let timeoutID;
 
-    // Desplazarce al Formulario por medio del ID al cargar la pagina si existe el hash.
-    const urlCompleta = window.location.href;
-    const hash = window.location.hash;
-    Array.from(sections).forEach((section, index) => {
-        if(section.id === hash.slice(1)){
-            section.style.transform = `translateX(-${index * 100}vw) scale(1)`;
-            section.style.opacity = "1";
-        } else {
-            section.style.transform = `translateX(-${index * 100}vw) scale(0.5)`;
-            section.style.opacity = "0";
-        }
-    });
-
     // function to active timeOut
     function startTimeout(time, callback) {
 
@@ -51,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // animar el footer nav al abrir la web
     startTimeout(500, enableFooterNav);
     startTimeout(8000, desableFooterNav);
+
 
     // navegacion de los elementos
     navLinks.forEach((link) => {
