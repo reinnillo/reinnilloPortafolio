@@ -17,11 +17,11 @@ body {
 
         .contact-container {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: flex-start;
 
             form {
-                width: 60%;
+                width: 40%;
                 display: flex;
                 flex-direction: column;
                 text-align: left;
@@ -107,7 +107,7 @@ body {
             /* Addres and map */
             .contact-info {
                 height: 20rem;
-                width: 80%;
+                width: 60%;
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
@@ -188,7 +188,6 @@ body {
                 }
 
                 form {
-                    text-align: center;
 
                     .form-group label,
                     .form-group input[type="text"],
@@ -199,6 +198,12 @@ body {
                 }
             }
         }
+    }
+}
+
+@media (max-width: 992px) {
+    body #contact .contact-container form {
+        width: 30%;
     }
 }
 
@@ -229,8 +234,8 @@ body {
                         padding: 1rem;
                         background: var(--light);
                         background: var(--core-gradient);
-                        
-                        .form-group{
+
+                        .form-group {
                             label {
                                 font-size: 1.5rem;
                                 margin: 1rem 0;

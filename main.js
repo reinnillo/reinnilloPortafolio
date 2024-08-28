@@ -6,6 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const openFooter_BTN = document.getElementById('openFooter');
     let timeoutID;
 
+    // Desplazarce al Formulario por medio del ID al cargar la pagina si existe el hash.
+    const urlCompleta = window.location.href;
+    const hash = window.location.hash;
+    Array.from(sections).forEach((section, index) => {
+        if(section.id === hash.slice(1)){
+            section.style.transform = `translateX(-${index * 100}vw) scale(1)`;
+            section.style.opacity = "1";
+        } else {
+            section.style.transform = `translateX(-${index * 100}vw) scale(0.5)`;
+            section.style.opacity = "0";
+        }
+    });
+
     // function to active timeOut
     function startTimeout(time, callback) {
 
@@ -39,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
     startTimeout(500, enableFooterNav);
     startTimeout(8000, desableFooterNav);
 
-
     // navegacion de los elementos
     navLinks.forEach((link) => {
         link.addEventListener("click", (e) => {
@@ -61,12 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const targetIndex = Array.from(sections).indexOf(targetSection);
             sections.forEach((section, index) => {
                 if (targetIndex === index) {
-                    section.style.transform = `translateX(-${targetIndex * 100
-                        }vw) scale(1)`;
+                    section.style.transform = `translateX(-${targetIndex * 100}vw) scale(1)`;
                     section.style.opacity = "1";
                 } else {
-                    section.style.transform = `translateX(-${targetIndex * 100
-                        }vw) scale(0.5)`;
+                    section.style.transform = `translateX(-${targetIndex * 100}vw) scale(0.5)`;
                     section.style.opacity = "0.2";
                 }
             });
@@ -76,4 +86,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // Establecer la sección inicial activa
     const initialSection = document.getElementById("home");
     initialSection.classList.add("active");
-});
+});  

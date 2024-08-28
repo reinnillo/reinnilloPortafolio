@@ -131,6 +131,7 @@
                 transition: all 0.3s;
                 background: var(--gradient-02);
                 border-radius: var(--b-radius);
+                box-shadow: var(--shadow-00);
                 display: flex;
                 justify-content: center;
                 align-items: center;
