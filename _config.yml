@@ -1,0 +1,43 @@
+title: "Alexander Reina Pinillo - Portafolio"
+description: "Portafolio de Alexander Reina Pinillo, desarrollador front-end. Explora mis proyectos y contáctame."
+baseurl: "https://reinnillo.github.io/reinnilloPortafolio" # la URL base de tu sitio
+url: "https://reinnillo.github.io/reinnilloPortafolio" # la URL completa de tu sitio
+
+# Configuración de SEO
+seo:
+  title: "Alexander Reina Pinillo - Portafolio"
+  description: "Portafolio de Alexander Reina Pinillo, desarrollador front-end. Explora mis proyectos y contáctame."
+  keywords: "Alexander Reina, reinnillo, desarrollador front-end, portafolio, proyectos, contacto, Santiago de Veraguas, Panamá"
+  author: "Alexander Reina Pinillo"
+
+# Configuración de redes sociales
+social:
+  twitter: "https://x.com/reinnillo"
+  github: "https://github.com/reinnillo"
+  linkedin: "https://www.linkedin.com/in/alexander-d-reina-p-737626318/?originalSubdomain=pa"
+  instagram: "https://www.instagram.com/reinnillo/"
+
+# Configuración de Google Analytics
+# google_analytics: "UA-XXXXXXXXX-X"
+
+# Configuración de plugins (si decides usar alguno)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Configuración de Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+
+
+# Configuración de la compilación
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - .hintrc
