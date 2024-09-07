@@ -3,18 +3,22 @@
   --title-font-size: 2rem;
   --title-font-family: "Exo", Arial, sans-serif;
   --text-font-family: "Exo", Tahoma, Verdana, Arial, sans-serif;
-  --b-radius: 1rem;
+  --b-radius-small: 5px;
+  --b-radius-medium: 0.5rem;
+  --b-radius-large: 1rem;
   --total-tools: 11;
   --width-tool: 4.5rem;
 
   /* Colors */
   --dark: #2c1952;
   --light: #ae90f3;
-  --text-color: #fff;
+  --text-color: #e9dada;
+  --text-btn-color: var(--light);
+  --icon-color: #7e66b1bf;
   --darkGlass: rgba(0, 0, 0, 0.5);
   --bg-transparent-color: rgba(0, 0, 0, 0.5);
   --animation-pulse-clr: #bab4b4;
-  --shadow-00: 0 8px 16px rgba(0, 0, 0, 0.75);
+  --shadow-00: 2px 8px 18px 3px rgba(0, 0, 0, 0.75);
   --shadow-01: 0 0px 5px var(--light);
 
   /* Gradient */
@@ -26,11 +30,15 @@
     rgba(82, 194, 255, 0.4),
     #000
   );
-  --gradient-01: linear-gradient(-45deg, #d000f7, #24bae3);
+  --gradient-01: linear-gradient(
+    -45deg, 
+    #d000f7, 
+    #24bae3
+  );
 }
 
 :root[data-theme="dark"] {
-  --core-gradient: var(--dark);
+  --core-gradient: var(--light);
   --background-page: linear-gradient(
     0deg,
     rgb(36, 30, 46),
@@ -42,7 +50,7 @@
 }
 
 :root[data-theme="light"] {
-  --core-gradient: var(--light);
+  --core-gradient: var(--dark);
   --background-page: linear-gradient(
     0deg,
     rgb(36, 30, 46),

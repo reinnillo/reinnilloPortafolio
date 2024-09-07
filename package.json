@@ -1,7 +1,8 @@
 {
   "devDependencies": {
     "@hint/configuration-web-recommended": "^8.2.23",
-    "hint": "^7.1.12"
+    "hint": "^7.1.12",
+    "vite": "^5.4.2"
   },
   "name": "reinnillo_portafolio",
   "version": "2.0.0",
@@ -190,6 +191,7 @@
     "latest-version": "^5.1.0",
     "lcid": "^3.1.1",
     "levn": "^0.4.1",
+    "lit": "^3.2.0",
     "locate-path": "^5.0.0",
     "lockfile": "^1.0.4",
     "lodash": "^4.17.21",
@@ -378,7 +380,10 @@
     "yauzl": "^2.10.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "hintConfig": {
     "connector": {
@@ -388,7 +393,8 @@
       "formatterName"
     ],
     "parsers": [
-      "parserName", "javascript"
+      "parserName",
+      "javascript"
     ],
     "hints": {
       "hint1": "error",

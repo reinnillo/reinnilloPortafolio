@@ -47,7 +47,7 @@ body {
                     textarea {
                         width: 80%;
                         padding: 1rem;
-                        border-radius: var(--b-radius);
+                        border-radius: var(--b-radius-large);
                         font-size: 1rem;
                         color: var(--text-color);
                         background: var(--dark);
@@ -82,7 +82,7 @@ body {
                     color: var(--text-color);
                     background-color: var(--light);
                     border: none;
-                    border-radius: var(--b-radius);
+                    border-radius: var(--b-radius-small);
                     cursor: pointer;
                     box-shadow: var(--shadow-01);
                     transition: background-color 0.3s, transform 0.3s;
@@ -115,7 +115,7 @@ body {
                 padding: 1rem;
                 margin-top: 1rem;
                 background: var(--gradient-00);
-                border-radius: var(--b-radius);
+                border-radius: var(--b-radius-large);
                 color: var(--text-color);
                 box-shadow: var(--shadow-00);
 
@@ -147,7 +147,7 @@ body {
 
                         .icon {
                             padding: 0.5rem 1rem;
-                            border-radius: 5px;
+                            border-radius: var(--b-radius-small);
                             background: var(--gradient-02);
                             color: var(--text-color);
                             transition: background 0.3s, transform 0.3s;
@@ -165,7 +165,7 @@ body {
                 .map {
 
                     iframe {
-                        border-radius: var(--b-radius);
+                        border-radius: var(--b-radius-small);
                     }
                 }
             }
