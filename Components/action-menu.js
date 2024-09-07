@@ -1,5 +1,5 @@
-import { LitElement, html, css } from "../node_modules/lit/development/index.js";
-// import { LitElement, html, css } from 'https://unpkg.com/lit?module';
+// import { LitElement, html, css } from "";
+import { LitElement, html, css } from "https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js";
 import { userIcon, userDetailIcon, downloadIcon } from "./icons.js";
 
 class ProfileMenu extends LitElement {
