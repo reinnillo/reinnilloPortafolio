@@ -1,4 +1,4 @@
-import { svg } from "lit";
+import { svg } from "./lit";
 // import { svg } from 'https://unpkg.com/lit?module';
 
 // iconos de redes sociales
