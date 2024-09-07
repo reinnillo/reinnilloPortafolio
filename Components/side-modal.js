@@ -139,8 +139,8 @@ class SideModal extends LitElement {
     .skills-section {
       width: 13rem;
     }
-    .skills-section h2 {}
-    .skills-container {}
+    /*.skills-section h2 {}*/
+    /*.skills-container {}*/
 
     .skill {
       position: relative;
