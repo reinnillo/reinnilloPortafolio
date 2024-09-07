@@ -1,4 +1,5 @@
-import { LitElement, html, css } from "lit";
+// import { LitElement, html, css } from "lit";
+import { LitElement, html, css } from 'https://unpkg.com/lit?module';
 import { closeIcon } from "./icons";
 import { dataProfile, AboutMe, ProfileContact, skills } from "./ProfileContent";
 
