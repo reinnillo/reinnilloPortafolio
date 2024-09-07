@@ -1,6 +1,7 @@
 import { instagramIcon, linkedinIcon, githubIcon, whatsappIcon, emailIcon, platziIcon } from "./icons";
+
 export const dataProfile = {
-    img: '../asset/img/profile/alex.webp',
+    img: './asset/img/profile/alex.webp',
 };
 
 export const ProfileContact = [

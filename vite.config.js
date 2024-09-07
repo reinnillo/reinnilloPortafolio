@@ -4,7 +4,7 @@ export default defineConfig({
   base: 'https://reinnillo.github.io/reinnilloPortafolio/',
   server: {
     open: true,
-    port: 3000, // Cambia el puerto del servidor de desarrollo si es necesario.
+    port: 3000,
   },
   build: {
     outDir: 'dist', // Directorio de salida para los archivos de producción.
@@ -19,6 +19,6 @@ export default defineConfig({
       '@': '/src', // Alias para simplificar importaciones.
     },
   },
-  plugins: [], // Añade plugins de Vite aquí si es necesario.
+  plugins: [], // para añadir plugins de Vite aquí si es necesario.
 });
 
