@@ -1,4 +1,5 @@
-import { LitElement, html, css } from "lit";
+// import { LitElement, html, css } from "lit";
+import { LitElement, html, css } from 'https://unpkg.com/lit?module';
 import { userIcon, userDetailIcon, downloadIcon } from "./icons";
 
 class ProfileMenu extends LitElement {
