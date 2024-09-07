@@ -1,5 +1,5 @@
-// import { LitElement, html, css } from "lit";
-import { LitElement, html, css } from 'https://unpkg.com/lit?module';
+import { LitElement, html, css } from "lit";
+// import { LitElement, html, css } from 'https://unpkg.com/lit?module';
 import { messageIcon } from "./icons";
 
 class CallToAction extends LitElement {
