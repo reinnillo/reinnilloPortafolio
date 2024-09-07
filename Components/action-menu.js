@@ -1,6 +1,6 @@
-import { LitElement, html, css } from "./lit";
+import { LitElement, html, css } from "../node_modules/lit/development/index.js";
 // import { LitElement, html, css } from 'https://unpkg.com/lit?module';
-import { userIcon, userDetailIcon, downloadIcon } from "./icons";
+import { userIcon, userDetailIcon, downloadIcon } from "./icons.js";
 
 class ProfileMenu extends LitElement {
     static properties = {

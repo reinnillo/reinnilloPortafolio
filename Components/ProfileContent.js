@@ -1,4 +1,4 @@
-import { instagramIcon, linkedinIcon, githubIcon, whatsappIcon, emailIcon, platziIcon } from "./icons";
+import { instagramIcon, linkedinIcon, githubIcon, whatsappIcon, emailIcon, platziIcon } from "./icons.js";
 
 export const dataProfile = {
     img: './asset/img/profile/alex.webp',

@@ -1,7 +1,7 @@
-import { LitElement, html, css } from "./lit";
+import { LitElement, html, css } from "../node_modules/lit/development/index.js";
 // import { LitElement, html, css } from 'https://unpkg.com/lit?module';
-import { closeIcon } from "./icons";
-import { dataProfile, AboutMe, ProfileContact, skills } from "./ProfileContent";
+import { closeIcon } from "./icons.js";
+import { dataProfile, AboutMe, ProfileContact, skills } from "./ProfileContent.js";
 
 class SideModal extends LitElement {
   static styles = css`
