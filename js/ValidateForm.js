@@ -61,7 +61,7 @@ validateElement.forEach((element) => {
 
         // validamos que el input esta vacio
         if (!element.checkValidity()) {
-            // le asignamos la clase "error"
+            // le asignamos la clase "error" al elemento input o textarea
             element.classList.add("error");
             // a su span le agregamos el mensaje de validacion que tiene el input al estar vacio.
             errorSpan.textContent = element.validationMessage;

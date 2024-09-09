@@ -61,17 +61,10 @@
           }
         }
     </script>
-
-    <!-- litElement component -->
-    <script type="module" src="./Components/action-menu.js"></script>
-    <script type="module" src="./Components/side-modal.js"></script>  
-    <script type="module" src="./Components/call-to-action-button.js"></script>  
-    <script type="module" src="./Components/icons.js"></script>
-    <script type="module" src="./Components/ProfileContent.js"></script>
-    <!--  -->
 </head>
 
 <body>
+    <notification-modal></notification-modal>
     <!-- Menu Desktop -->
     <header id="header-menu">
         <div class="left">
@@ -297,13 +290,22 @@
         </svg>
     </div>
     
-    <!-- lit Component -->
-    <!-- Modal de Información del Proyecto (Oculto por defecto) -->
-    <side-modal>
-        <div slot="callToActionButon">
-            <call-to-action-button>Escribeme</call-to-action-button>
-        </div>
-    </side-modal>
+    <!-- Modal de Información adicional del perfil (Oculto por defecto) -->
+    <side-modal><call-to-action-button slot="callToActionButon">Escribeme</call-to-action-button></side-modal>
+    <!-- contenedor para mostrar el formulario dinamicamente -->
+    <div id="parentForm"></div>
+
+    <!-- litElement component -->
+    <script type="module" src="./components/profile-menu.js"></script>
+    <script type="module" src="./Components/side-modal.js"></script>  
+    <script type="module" src="./Components/call-to-action-button.js"></script>  
+    <script type="module" src="./Components/icons.js"></script>
+    <script type="module" src="./Components/ProfileContent.js"></script>
+    <script type="module" src="./Components/form-contact.js"></script>
+    <script type="module" src="./Components/button-close.js"></script>
+    <script type="module" src="./Components/notification-modal.js"></script>
+    <!--  -->
+
     <!-- script JS -->
     <script type="module" src="./main.js"></script>
     <script type="module" src="./js/ChangeModeTheme.js"></script>

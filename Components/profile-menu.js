@@ -1,10 +1,11 @@
-// import { LitElement, html, css } from "";
+// import { LitElement, html, css } from "lit";
 import { LitElement, html, css } from "https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js";
 import { userIcon, userDetailIcon, downloadIcon } from "./icons.js";
 
 class ProfileMenu extends LitElement {
     static properties = {
         CV: { type: String },
+        _isOpen: { type: Boolean }
     }
     static styles = css`
         *,
@@ -106,6 +107,7 @@ class ProfileMenu extends LitElement {
         super();
         this.element_menuBox = null;
         this.CV = '../asset/cv/Alexander_Reina_CV.pdf';
+        this._isOpen = false;
     }
 
     // Metodo
@@ -128,8 +130,9 @@ class ProfileMenu extends LitElement {
 
     render() {
         return html`
-            <div id="ProfileMenu" @mouseleave=${ this.hiddenMenuProfile }>
-                <div class="menu-box">
+            <div id="ProfileMenu" @mouseleave=${ this._closeMenu }>
+            
+                <div class="menu-box ${this._isOpen ? "active" : ''}">
                     <button class="MoreInfoButton button">
                         <a href="${this.CV}" download="Alexander_Reina_CV.pdf" aria-label="download cv Alexander Reina">${downloadIcon}Descargar CV</a>
                     </button>
@@ -139,10 +142,18 @@ class ProfileMenu extends LitElement {
 
                 <button 
                     class="button option-profile-button" 
-                    @mouseover=${ this.showMenuProfile } 
+                    @mouseover=${ this._openMenu } 
                 >${userDetailIcon} Perfil</button>
+
             </div>
         `;
+    }
+
+    _openMenu() {
+        this._isOpen = true;
+    }
+    _closeMenu() {
+        this._isOpen = false;
     }
 }
 

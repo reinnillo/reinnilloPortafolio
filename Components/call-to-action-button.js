@@ -1,4 +1,4 @@
-// import { LitElement, html, css } from "";
+// import { LitElement, html, css } from "lit";
 import { LitElement, html, css } from "https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js";
 import { messageIcon } from "./icons.js";
 
@@ -35,16 +35,18 @@ class CallToAction extends LitElement {
             fill: var(--light);
         }
     `;
-
+  
     render() {
         return html`
-            <button @click=${this._changeColor} class="call-to-action-button"> <slot></slot> ${messageIcon}</button>
+            <button @click=${ this._insertForm } class="call-to-action-button"> <slot></slot> ${messageIcon}</button>
         `;
     }
 
-    _changeColor(){
-        const svgChild = this.lastElementChild;
-        console.log(svgChild);
+    _insertForm() {
+        const parentForm = document.getElementById("parentForm");
+        const formComponent = document.createElement('form-contact');
+        parentForm.appendChild(formComponent);
+        if (formComponent) formComponent.openForm();
     }
 }
 
