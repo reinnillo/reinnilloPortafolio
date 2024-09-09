@@ -157,4 +157,4 @@ class ProfileMenu extends LitElement {
     }
 }
 
-customElements.define("action-menu", ProfileMenu);
+customElements.define("profile-menu", ProfileMenu);
