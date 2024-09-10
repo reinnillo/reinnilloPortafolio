@@ -2,3 +2,4 @@ node_modules
 .hintrc
 .vs
 .vscode
+dist
