@@ -160,7 +160,7 @@ data.then(records => {
     createSlide(slide, projectDefault[0].projectName, projectDefault[0].slideImages, projectDefault[0].alt, projectDefault[0].title);
     [...arrow].forEach(a => {
         a.addEventListener('click', () => {
-            alert('Estás viendo el proyecto por defecto, debido que hubo un problema al cargar los proyectos o tu navegador no soporte JavaScript.');
+            alert('Estás viendo el proyecto por defecto, debido que hubo un problema al cargar los proyectos.');
         });
     });
 });

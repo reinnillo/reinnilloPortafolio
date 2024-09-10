@@ -43,17 +43,21 @@ body {
                 transform: translateX(-100%);
                 transition: 0.5s;
 
-                label {
-                    display: flex;
-                    transform: translate(5px, 5px);
+                #close-menu {
+                    margin: 0.5rem 0 0 0.5rem;
+                    img {
+                        width: 5rem;
+                        box-shadow: var(--shadow-00);
+                        border-radius: 50%;
+                    }
                 }
 
                 li {
                     margin-left: 1.5rem;
                     margin-top: 2rem;
                     a {
-                        font-size: 2.5rem;
-                        font-weight: 200;
+                        font-size: 3rem;
+                        font-weight: 300;
                     }
                 }
             }
