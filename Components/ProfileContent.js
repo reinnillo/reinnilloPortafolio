@@ -1,16 +1,16 @@
-import { instagramIcon, linkedinIcon, githubIcon, whatsappIcon, emailIcon, platziIcon } from "./icons.js";
+import { instagramIcon, linkedinIcon, githubIcon, whatsappIcon, emailIcon, platziIcon, phoneCallIcon } from "./icons.js";
 
 export const dataProfile = {
     img: './asset/img/profile/alex.webp',
 };
 
 export const ProfileContact = [
-    { name: 'instagram', href: 'https://instagram.com/reinnillo/', icon: instagramIcon },
-    { name: 'linkedin', href: 'https://www.linkedin.com/in/alexander-d-reina-p-737626318/', icon: linkedinIcon },
+    { name: 'Instagram', href: 'https://instagram.com/reinnillo/', icon: instagramIcon },
+    { name: 'Linkedin', href: 'https://www.linkedin.com/in/alexander-d-reina-p-737626318/', icon: linkedinIcon },
     { name: 'GitHub', href: 'https://github.com/reinnillo/', icon: githubIcon },
     { name: 'WhatsApp', href: 'https://api.whatsapp.com/send?phone=50768439588&text=Hola,%20me%20gustaría%20contratar%20tus%20servicios.%20Por%20favor,%20contáctame%20para%20discutir%20los%20detalles.%20Gracias.', icon: whatsappIcon },
     { name: 'Email', href: 'mailto:30todev@gmail.com?subject=Solicitud%20de%20Servicio&body=Hola,%20me%20gustaría%20contratar%20tus%20servicios.%20Por%20favor,%20contáctame%20para%20discutir%20los%20detalles.%20Gracias.', icon: emailIcon },
-    { name: 'Referencias de cursos en Tecnologia', href: 'https://platzi.com/p/reinnillo/', icon: platziIcon },
+    { name: 'Telefono', href: 'tel:+50767053532', icon: phoneCallIcon },
 ];
 
 export const AboutMe = [
@@ -21,10 +21,10 @@ export const AboutMe = [
         proyectos personales que me han permitido mejorar mis
         habilidades en JavaScript, LitElement, HTML, CSS y otros. Me encanta
         crear interfaces limpias y funcionales que ofrezcan una
-        experiencia de usuario óptima y accesible. A lo largo de mi
-        trayectoria, he desarrollado soluciones innovadoras y
+        experiencia de usuario óptima y accesible. A lo largo de mis proyectos, 
+        he desarrollado soluciones innovadoras y
         personalizadas, como un proyecto reciente para una fotógrafa,
-        que puedes ver aquí.`
+        que puedes ver en la sección de proyectos.`
     },
     {
         title: 'Mis Objetivos',

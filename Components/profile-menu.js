@@ -1,5 +1,5 @@
-// import { LitElement, html, css } from "lit";
-import { LitElement, html, css } from "https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js";
+import { LitElement, html, css } from "lit";
+// import { LitElement, html, css } from "https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js";
 import { userIcon, userDetailIcon, downloadIcon } from "./icons.js";
 
 class ProfileMenu extends LitElement {
@@ -24,6 +24,14 @@ class ProfileMenu extends LitElement {
             outline: none;
             line-height: 1.4rem;
         }
+        ul,
+        a,
+        svg,
+        path,
+        circle,
+        text {
+            cursor: var(--cursor);
+        }
         #ProfileMenu {
             position: relative;
             width: 12rem;
@@ -33,15 +41,14 @@ class ProfileMenu extends LitElement {
             justify-content: space-between;
             align-items: center;
         }
+        
         .button {
             background: var(--dark);
             font-family: var(--text-font-family);
             padding: 0.5rem 1.5rem;
             color: var(--text-btn-color);
-            border: none;
-            text-decoration: none;
             font-size: 1rem;
-            cursor: pointer;
+            cursor: var(--cursor);
         }
         .MoreInfoButton, .MoreInfoButton a {
             width: 100%;
@@ -49,7 +56,7 @@ class ProfileMenu extends LitElement {
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            cursor: pointer;
+            cursor: var(--cursor);
         }
         .MoreInfoButton:hover{
             background-color: var(--light);
@@ -61,6 +68,8 @@ class ProfileMenu extends LitElement {
             height: 1.5rem;
             fill: var(--icon-color);
         }
+
+        /* boton para el menu de perfil */
         .option-profile-button {
             position: absolute;
             bottom: 1px;
@@ -71,6 +80,10 @@ class ProfileMenu extends LitElement {
             align-items: center;
             justify-content: space-around;
             box-shadow: var(--shadow-00);
+        }
+        .option-profile-button:hover {
+            background: var(--light);
+            color: var(--dark);
         }
         .option-profile-button svg {
             margin-right: 1rem;

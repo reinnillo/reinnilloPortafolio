@@ -8,18 +8,22 @@
   --b-radius-large: 1rem;
   --total-tools: 11;
   --width-tool: 4.5rem;
+  --pointer: url('../asset/icon/pointer.svg'), auto;
 
   /* Colors */
   --dark: #2c1952;
   --light: #ae90f3;
   --text-color: #e9dada;
   --text-btn-color: var(--light);
-  --icon-color: #7e66b1bf;
+  --icon-color: rgba(126, 102, 177, 0.749);
   --darkGlass: rgba(0, 0, 0, 0.5);
   --bg-transparent-color: rgba(0, 0, 0, 0.5);
   --animation-pulse-clr: #bab4b4;
   --shadow-00: 2px 8px 18px 3px rgba(0, 0, 0, 0.75);
   --shadow-01: 0 0px 5px var(--light);
+  --shadow-02: 0px 0px 16px 0px var(--light);
+  --clr-progress-bar-outside: #ae90f363;
+  --clr-progress-bar-inside: #b8aae3;
 
   /* Gradient */
   --gradient-00: linear-gradient(
@@ -47,6 +51,7 @@
   );
   --gradient-02: linear-gradient(135deg, var(--dark), var(--light));
   --openFooterColor: var(--light);
+  --cursor: url('../asset/icon/cursor-dark.svg'), auto;
 }
 
 :root[data-theme="light"] {
@@ -59,6 +64,7 @@
   );
   --gradient-02: linear-gradient(135deg, var(--light), var(--dark));
   --openFooterColor: var(--dark);
+  --cursor: url('../asset/icon/cursor-light.svg'), auto;
 }
 
 *,

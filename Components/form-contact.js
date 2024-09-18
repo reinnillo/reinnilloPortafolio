@@ -1,32 +1,20 @@
-// import { LitElement, html, css } from 'lit';
-import { LitElement, html, css } from "https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js";
+import { LitElement, html, css } from 'lit';
+// import { LitElement, html, css } from "https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js";
 import { userIcon, messageIcon, emailIcon} from './icons.js';
 
 export class FormContact extends LitElement {
     static styles = [
         css`
             :host {
-                display: none;
-                transform: translate(50%, 20%);
-                width: 50vw;
-                height: 70vh; 
-                background: rgba(0, 0, 0,0.5); 
-                position: absolute; 
-                top: 0;
-                bottom: 0;
-                backdrop-filter: blur(1rem);
-                z-index: 5000;
-                border-radius: var(--b-radius-large);
-            }
-            :host(.visible) {
-                display: grid;
-                place-content: center;
+                display: flex;
+                justify-content: center;
             }
             form {
-                width: 100%;
+                height: 100%;
                 display: flex;
                 flex-direction: column;
                 text-align: left;
+                position: relative;
             }
             /* contenedor de errores generales */
             #errors {
@@ -39,6 +27,7 @@ export class FormContact extends LitElement {
                 display: flex;
                 flex-direction: column;
                 margin-bottom: 1rem;
+                width: fit-content;
             }
             .form-group label {
                 font-size: 1rem;
@@ -47,6 +36,8 @@ export class FormContact extends LitElement {
                 align-items: center;
                 justify-content: flex-start;
                 gap: 0.5rem;
+                margin-bottom: 0.5rem;
+                width: fit-content;
             }
             .form-group label svg {
                 width: 2rem;
@@ -62,6 +53,7 @@ export class FormContact extends LitElement {
                 border: none;
                 color: var(--light);
                 width: 80%;
+                min-width: 30em;
                 padding: 1rem;
                 border-radius: var(--b-radius-large);
                 font-size: 1rem;
@@ -99,7 +91,7 @@ export class FormContact extends LitElement {
                 background-color: var(--dark);
                 border: none;
                 border-radius: var(--b-radius-small);
-                cursor: pointer;
+                cursor: var(--cursor);
                 box-shadow: none;
                 transition: all 0.2s ease;
             }
@@ -117,12 +109,52 @@ export class FormContact extends LitElement {
                 color: var(--light);
                 border: none;
             }
-            
-            /* componente Boton para cerrar el formulario */
-            :host #closeForm {
+
+            form .progress-bar {
                 position: absolute;
                 top: 0;
-                right: 0;
+                left: 1%;
+                height: 0.3rem;
+                width: 83%;
+                overflow: hidden;
+                background: var(--clr-progress-bar-outside);
+            }
+            form .progress-bar .progress-bar-inside {
+                position: absolute;
+                height: 100%;
+                width: 0;
+                background: var(--clr-progress-bar-inside);
+                transition: width 0.3s;
+            }
+            form .progress-bar .width-bar {
+                width: calc(100% / 3);
+            }
+
+            @media (max-width: 992px) {
+                form {
+                    width: 90% !important;
+                }
+                /* inputs y textareas */
+            .form-group input[type="text"],
+            .form-group input[type="email"],
+            .form-group textarea {
+                min-width: 13em;
+            }
+            }            
+            @media (max-width: 768px) {
+                :host {
+                    transform: none;
+                    width: 90% !important;
+                }
+                /* inputs y textareas */
+            .form-group input[type="text"],
+            .form-group input[type="email"],
+            .form-group textarea {
+                min-width: 13em;
+            }
+            }
+            @media (max-width: 480px) {
+                
             }
         `
     ];
@@ -138,12 +170,7 @@ export class FormContact extends LitElement {
         super();
         this.attachShadow({ mode: 'open' });
         this.addEventListener('input-completed', (event) => this._handleInputValidity(event));
-        this.addEventListener("close-modal", (event) => {
-            if(event.detail === "close") {
-                this._closeForm()
-                event.stopPropagation();
-            }
-        });
+
         this._validationStates = [];
         this._notificationMessageSent = "El mensaje fue enviado exitosamente 😍.";
         this._notificationMessageError = "Hubo un error al enviar el mensaje 😭.";
@@ -161,8 +188,11 @@ export class FormContact extends LitElement {
     _handleInputValidity(event) {
         const { index, isValid, value } = event.detail; // evento emitido por el input
         this._validationStates[index] = { isValid, value }; // actualizar el Array de estados
-        this._verifyInput();
+        this._isEnable = this._validationStates.every((state) => state.isValid);
     }
+
+    // Metodo para actualizar la barra de progreso
+
     // Metodo para detectar el tipo de dispositivo
     _detectDevice() {
         let device;
@@ -201,7 +231,7 @@ export class FormContact extends LitElement {
         const input = this.shadowRoot.getElementById(inputID);
         const index = input.dataset.index;
         const value = input.value;
-        const isValid = value === '' ? false : true;
+        const isValid = input.value.trim() !== '';
 
         input.dispatchEvent(new CustomEvent(
             'input-completed', {
@@ -227,7 +257,9 @@ export class FormContact extends LitElement {
 
     render() {
         return html`
-            <form>
+            <form id="quickContactForm">
+                <div class="progress-bar"> <div clas="progress-bar-inside"></div> </div>
+
                 <!-- Mostrar errores al usuarios -->
                 <div id="errors" role="alert" aria-live="assertive"></div>
 
@@ -284,20 +316,8 @@ export class FormContact extends LitElement {
 
                 <!-- Boton para enviar el formulario -->
                 <button id="submit" @click=${this._sendForm} type="submit" ?disabled="${!this._isEnable}">Enviar</button>
-            </form> 
-            <button-close id="closeForm"></button-close>
+            </form>
         `;
-    }
-
-    openForm() {
-        this.classList.add('visible');
-    }
-    _closeForm() {
-        this.classList.remove('visible');
-    }
-
-    _verifyInput() {
-        this._isEnable = this._validationStates.every((state) => state.isValid);
     }
 
     _sendForm () {
