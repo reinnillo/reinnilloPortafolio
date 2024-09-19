@@ -73,7 +73,7 @@ class ContactInfo extends LitElement {
             <div class="contact-container">
 
                 <div class="contact-details">
-                    <a><strong>Dirección:</strong> Santiago de Veraguas, Panamá</a>
+                    <a><strong>Dirección:</strong>Panamá, Republica de Panamá</a>
                     <a><strong>Teléfono:</strong> +507 6705 3532</a>
                     <a><strong>Email:</strong> 30todev@gmail.com</a>
                 </div>
