@@ -75,17 +75,21 @@ class WorkProcessSection extends LitElement {
         /* Right side: Text content */
         .content {
             flex: 2;
-            position: relative;
             padding: 1.5rem;
             border-left: solid var(--clr-progress-bar-outside);
-            text-align: justify;
+            text-align: start;
             display: flex;
             align-items: center;
+        }
+        .content .text h3, .content .active h3 {
+            display: none;
+        }
+        .title-item .title-mobile {
+            color: var(--light);
         }
 
         .text {
             display: none;
-            position: absolute;
             margin: 0.5rem 0;
             padding: 0.5rem;
         }
@@ -96,6 +100,28 @@ class WorkProcessSection extends LitElement {
 
         .text.active {
             display: block;
+        }
+
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+            }
+            .titles {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .content {
+                border-left: none;
+                border-top: solid var(--clr-progress-bar-outside);
+            }
+            .content .active h3 {
+                display: block;
+                font-size: 1.5rem;
+                color: var(--light);
+            }
+            .title-item .title-desktop {
+                display: none
+            }
         }
     `;
 
@@ -123,54 +149,79 @@ class WorkProcessSection extends LitElement {
             <div class="container">
                 <!-- Titles Column -->
                 <div class="titles">
-                    ${this.renderTitle('Primer Contacto:', 0)}
-                    ${this.renderTitle('Investigación y Propuesta:', 1)}
-                    ${this.renderTitle('Planificación:', 2)}
-                    ${this.renderTitle('Desarrollo:', 3)}
-                    ${this.renderTitle('Revisión y Ajustes:', 4)}
-                    ${this.renderTitle('Optimización y Entrega:', 5)}
-                    ${this.renderTitle('Soporte Post-Proyecto:', 6)}
+                    ${this.renderTitle('Paso', 'Primer Contacto', 0)}
+                    ${this.renderTitle('Paso', 'Investigación y Propuesta', 1)}
+                    ${this.renderTitle('Paso', 'Planificación', 2)}
+                    ${this.renderTitle('Paso', 'Desarrollo', 3)}
+                    ${this.renderTitle('Paso', 'Revisión y Ajustes', 4)}
+                    ${this.renderTitle('Paso', 'Optimización y Entrega', 5)}
+                    ${this.renderTitle('Paso', 'Soporte Post-Proyecto', 6)}
                 </div>
 
                 <!-- Text Content Column -->
                 <div class="content">
 
                     <div class="text ${this.currentStep === 0 ? 'active' : ''}">
-                        El proceso comienza con una reunión inicial, ya sea por videollamada o a través de un intercambio de correos, donde escucho detalladamente los objetivos del cliente. En esta etapa me aseguro de comprender completamente las necesidades del proyecto, los plazos, y las expectativas generales. Hago preguntas clave para clarificar qué resultados busca el cliente y cuál es el propósito del producto. Este paso es esencial para garantizar que ambos estemos alineados.
+                        <h3>Primer Contacto:</h3>
+                        <p>                        
+                            El proceso comienza con una reunión inicial, ya sea por videollamada o a través de un intercambio de correos, donde escucho detalladamente los objetivos del cliente. En esta etapa me aseguro de comprender completamente las necesidades del proyecto, los plazos, y las expectativas generales. Hago preguntas clave para clarificar qué resultados busca el cliente y cuál es el propósito del producto. Este paso es esencial para garantizar que ambos estemos alineados.
+                        </p>
                     </div>
 
                     <div class="text ${this.currentStep === 1 ? 'active' : ''}">
-                        Con la información recabada, paso a investigar y analizar el mercado o el tipo de solución que el cliente necesita. Esto incluye revisar referencias, explorar tecnologías o herramientas que se adapten mejor a las necesidades del proyecto y preparar una propuesta detallada. La propuesta generalmente incluye una descripción del trabajo a realizar, plazos estimados, y el coste. En esta fase me aseguro de ofrecer opciones personalizadas y flexibles para cumplir con las expectativas del cliente.
+                        <h3>Investigación y Propuesta:</h3>
+                        <p>                        
+                            Con la información recabada, paso a investigar y analizar el mercado o el tipo de solución que el cliente necesita. Esto incluye revisar referencias, explorar tecnologías o herramientas que se adapten mejor a las necesidades del proyecto y preparar una propuesta detallada. La propuesta generalmente incluye una descripción del trabajo a realizar, plazos estimados, y el coste. En esta fase me aseguro de ofrecer opciones personalizadas y flexibles para cumplir con las expectativas del cliente.
+                        </p>
                     </div>
 
                     <div class="text ${this.currentStep === 2 ? 'active' : ''}">
-                        Una vez que la propuesta es aprobada, empiezo con la planificación detallada del proyecto. Creo un cronograma de trabajo que divide el proyecto en fases, definiendo los hitos clave. En proyectos web, por ejemplo, divido las tareas en fases como diseño de interfaz, desarrollo front-end, y pruebas. Me aseguro de establecer canales de comunicación claros y frecuentes con el cliente para evitar malentendidos durante la ejecución.
+                        <h3>Planificación:</h3>
+                        <p>                        
+                            Una vez que la propuesta es aprobada, empiezo con la planificación detallada del proyecto. Creo un cronograma de trabajo que divide el proyecto en fases, definiendo los hitos clave. En proyectos web, por ejemplo, divido las tareas en fases como diseño de interfaz, desarrollo front-end, y pruebas. Me aseguro de establecer canales de comunicación claros y frecuentes con el cliente para evitar malentendidos durante la ejecución.
+                        </p>
                     </div>
 
                     <div class="text ${this.currentStep === 3 ? 'active' : ''}">
-                        Aquí es donde la mayor parte del trabajo técnico se realiza. Comienzo a escribir el código, ya sea construyendo la interfaz en HTML, CSS, JavaScript, o utilizando tecnologías como LitElement o React, según el proyecto. Durante esta fase, mantengo al cliente informado sobre el progreso, mostrando avances parciales o iteraciones del trabajo. Esto permite al cliente hacer ajustes o dar feedback sobre cambios, lo que ayuda a mantener el proyecto en la dirección correcta.
+                        <h3>Desarrollo:</h3>
+                        <p>                        
+                            Aquí es donde la mayor parte del trabajo técnico se realiza. Comienzo a escribir el código, ya sea construyendo la interfaz en HTML, CSS, JavaScript, o utilizando tecnologías como LitElement o React, según el proyecto. Durante esta fase, mantengo al cliente informado sobre el progreso, mostrando avances parciales o iteraciones del trabajo. Esto permite al cliente hacer ajustes o dar feedback sobre cambios, lo que ayuda a mantener el proyecto en la dirección correcta.
+                        </p>
                     </div>
 
                     <div class="text ${this.currentStep === 4 ? 'active' : ''}">
-                        Cuando el desarrollo está cerca de finalizar, realizo una serie de revisiones para pulir detalles y corregir errores. También involucro al cliente en este proceso, mostrándole versiones casi terminadas para garantizar que el resultado esté alineado con sus expectativas. Los ajustes y cambios se manejan rápidamente en esta fase, asegurando que el producto final sea óptimo tanto en funcionalidad como en diseño.
+                        <h3>Revisión y Ajustes:</h3>
+                        <p>                        
+                            Cuando el desarrollo está cerca de finalizar, realizo una serie de revisiones para pulir detalles y corregir errores. También involucro al cliente en este proceso, mostrándole versiones casi terminadas para garantizar que el resultado esté alineado con sus expectativas. Los ajustes y cambios se manejan rápidamente en esta fase, asegurando que el producto final sea óptimo tanto en funcionalidad como en diseño.
+                        </p>
                     </div>
 
                     <div class="text ${this.currentStep === 5 ? 'active' : ''}">
-                        Una vez que el producto ha sido completado y cumple con todos los requisitos acordados, procedo a la entrega final. Proveo al cliente con todos los archivos necesarios, como código fuente, documentación y cualquier recurso adicional que se haya generado durante el proyecto. En esta etapa me aseguro de que el cliente tenga todo lo necesario para gestionar el producto de manera independiente si así lo desea.
+                        <h3>Optimización y Entrega:</h3>
+                        <p>                        
+                            Una vez que el producto ha sido completado y cumple con todos los requisitos acordados, procedo a la entrega final. Proveo al cliente con todos los archivos necesarios, como código fuente, documentación y cualquier recurso adicional que se haya generado durante el proyecto. En esta etapa me aseguro de que el cliente tenga todo lo necesario para gestionar el producto de manera independiente si así lo desea.
+                        </p>
                     </div>
 
                     <div class="text ${this.currentStep === 6 ? 'active' : ''}">
-                        Después de la entrega, ofrezco un periodo de soporte post-proyecto. Esto incluye resolver posibles dudas que el cliente pueda tener sobre el uso del producto, corregir errores menores que puedan surgir, o realizar pequeños ajustes. Esta fase es crucial para garantizar la satisfacción del cliente y asegurar que todo funcione perfectamente después de la implementación.
+                        <h3>Soporte Post-Proyecto:</h3>
+                        <p>                        
+                            Después de la entrega, ofrezco un periodo de soporte post-proyecto. Esto incluye resolver posibles dudas que el cliente pueda tener sobre el uso del producto, corregir errores menores que puedan surgir, o realizar pequeños ajustes. Esta fase es crucial para garantizar la satisfacción del cliente y asegurar que todo funcione perfectamente después de la implementación.
+                        </p>
                     </div>
                 </div>
             </div>
         `;
     }
 
-    renderTitle(title, index) {
+    renderTitle(titleMobile, titleDesktop, index) {
         return html`
-            <div class="title-item sele" aria-disabled="${index === 0 ? !this.hoverTitle : this.hoverTitle}" @mouseenter="${(event) => this.setActiveStep(event, index)}">
-                ${title}
+            <div 
+                class="title-item" 
+                aria-disabled="${index === 0 ? !this.hoverTitle : this.hoverTitle}" 
+                @mouseenter="${(event) => this.setActiveStep(event, index)}">
+                <div class="title-mobile">${titleMobile} ${index + 1}</div>
+                <div class="title-desktop">${titleDesktop}</div>
             </div>
         `;
     }
