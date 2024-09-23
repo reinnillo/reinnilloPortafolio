@@ -78,8 +78,7 @@ class FaqSocialReviews extends LitElement {
       { question: '¿Ofrecen consultas en línea?', answer: 'Sí, ofrecemos consultas virtuales bajo solicitud.' },
     ];
     this.reviews = [
-      { reviewer: 'Juan Pérez', comment: 'Excelente servicio, muy recomendado.' },
-      { reviewer: 'Ana Gómez', comment: 'Atención rápida y amable.' },
+      { reviewer: 'Helen Miranda', comment: 'El proceso de la creación del portafolio fue muy bueno, siempre estuviste atento y compartiendo el avance del trabajo, me sentí muy bien en la manera que se iba dando y en todo momento aceptaste los cambios, el resultado me gustó mucho y recomiendo tu trabajo' },
     ];
   }
 
