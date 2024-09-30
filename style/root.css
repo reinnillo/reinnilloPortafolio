@@ -8,7 +8,7 @@
   --b-radius-large: 1rem;
   --total-tools: 11;
   --width-tool: 4.5rem;
-  --pointer: url('../asset/icon/pointer.svg'), auto;
+  --pointer: url('../asset/icon/pointer.svg'), pointer;
 
   /* Colors */
   --dark: #2c1952;
