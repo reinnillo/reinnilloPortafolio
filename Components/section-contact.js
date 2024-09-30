@@ -8,7 +8,7 @@ export class SectionContact extends LitElement {
             .contact-container {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: auto repeat(2, 1fr) auto repeat(2, 1fr);
+                grid-template-rows: repeat(6, auto);
                 align-items: start;
                 gap: 2rem;
             }
@@ -31,6 +31,7 @@ export class SectionContact extends LitElement {
                 justify-content: center;
                 align-items: flex-start;
                 gap: 2rem;
+margin: 2rem 0;
             }
             /* 3 */ 
             .form {
@@ -56,11 +57,13 @@ export class SectionContact extends LitElement {
             faq-social-reviews {
                 grid-column: span 2 / span 2;
                 grid-row-start: 5;
+margin: 2rem 0;
             }
             /* 6 */ 
             work-process-section {
                 grid-column: span 2 / span 2;
                 grid-row-start: 6;
+margin: 2rem 0;
             }
         
             @media (max-width: 768px) {
