@@ -5,23 +5,25 @@ export class MessageForm extends LitElement {
     static styles = [
         css`
             :host {
-                display: none;
-                transform: translate(20vw, 10vh);
+                display: flex;
+                justify-content: center;
                 width: 60vw;
                 height: auto;
                 overflow: hidden;
-                background: rgba(0, 0, 0,0.5); 
+                background: rgba(0, 0, 0, 0.5);
                 backdrop-filter: blur(1rem);
-                position: absolute; 
-                top: 0;
-                left: 0;
-                z-index: 5000;
                 border-radius: var(--b-radius-large);
+                border: none;
+                padding: 0;
+                /* Popover API oculta el elemento por defecto con display:none */
             }
-            :host(.visible) {
-                display: flex;
-                justify-content: center;
+
+            /* Backdrop nativo del Popover — sin JS extra */
+            :host::backdrop {
+                background: rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(3px);
             }
+
             .info-container {
                 display: flex;
                 justify-content: center;
@@ -38,8 +40,7 @@ export class MessageForm extends LitElement {
             #message-for-formModal {
                 margin: 1.5rem 0;
             }
-            
-            /* componente Boton para cerrar el formulario */
+
             :host #closeModal {
                 position: absolute;
                 top: 0;
@@ -48,9 +49,8 @@ export class MessageForm extends LitElement {
 
             @media (max-width: 998px) {
                 :host {
-                    transform: translate(5vw, 9vh);
                     width: 90vw;
-                    height: 85vh;
+                    max-height: 85vh;
                 }
                 .info-container .info-box {
                     display: none;
@@ -62,9 +62,15 @@ export class MessageForm extends LitElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
+
+        // Activar Popover API con fallback automático
+        if ('popover' in HTMLElement.prototype) {
+            this.setAttribute('popover', 'auto');
+        }
+
         this.addEventListener("close-modal", (event) => {
-            if(event.detail === "close") {
-                this._closeModal()
+            if (event.detail === "close") {
+                this._closeModal();
                 event.stopPropagation();
             }
         });
@@ -74,26 +80,35 @@ export class MessageForm extends LitElement {
         return html`
             <div class="info-container">
                 <div class="info-box">
-                        <div id="message-for-formModal">
+                    <div id="message-for-formModal">
                         <h3>¿Tienes alguna consulta?</h3>
-                        <p>Si necesitas más información sobre mis proyectos o tienes alguna consulta rápida, 
-                            utiliza este formulario para para ponerte en contacto conmigo.
+                        <p>Si necesitas más información sobre mis proyectos o tienes alguna consulta rápida,
+                            utiliza este formulario para ponerte en contacto conmigo.
                         </p>
                         <p>No dudes en preguntar cualquier cosa sobre mi trabajo o colaboración en proyectos.</p>
                     </div>
                 </div>
                 <form-contact></form-contact>
             </div>
-            <button-close id="closeModal"></button-close>     
+            <button-close id="closeModal"></button-close>
         `;
     }
 
     openModal() {
-        this.classList.add('visible');
-    }
-    _closeModal() {
-        this.classList.remove('visible');
+        if ('showPopover' in this) {
+            this.showPopover();
+        } else {
+            // Fallback para navegadores sin Popover API
+            this.classList.add('visible');
+        }
     }
 
+    _closeModal() {
+        if ('hidePopover' in this) {
+            this.hidePopover();
+        } else {
+            this.classList.remove('visible');
+        }
+    }
 }
 customElements.define('message-form', MessageForm);
