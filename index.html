@@ -12,6 +12,18 @@
     <meta name="author" content="Alexander Reina Pinillo">
     <meta name="google-site-verification" content="1BAuRyn-Z6pamMIMMpBRJstF2xupvVi8IaDkj7_Wyig" />
     <meta name="robots" content="index, follow">
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' https://cdn.jsdelivr.net https://cdn.botpress.cloud https://mediafiles.botpress.cloud;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' data: blob: https://res.cloudinary.com https://dl.airtable.com https://v5.airtableusercontent.com;
+        connect-src 'self' https://api.airtable.com;
+        frame-src 'none';
+        object-src 'none';
+        base-uri 'self';
+    ">
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

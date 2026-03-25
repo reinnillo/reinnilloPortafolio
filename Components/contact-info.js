@@ -87,7 +87,7 @@ class ContactInfo extends LitElement {
                     <h3>Recursos Útiles</h3>
                     <div class="resource-links">
                         <!-- <a href="#">Redes Sociales</a> -->
-                        <a href="https://platzi.com/p/reinnillo/">Referencias de Cursos en Tecnologia - Platzi -</a>
+                        <a href="https://platzi.com/p/reinnillo/" target="_blank" rel="noopener noreferrer">Referencias de Cursos en Tecnologia - Platzi -</a>
                     </div>
                 </div>
 
