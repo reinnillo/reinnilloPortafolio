@@ -226,6 +226,15 @@ export class FormContact extends LitElement {
         const datePanama = currentDate.toLocaleString('es-PA', options);
         return datePanama;
     }
+    // Metodo para sanitizar inputs antes de enviarlos
+    _sanitize(value, maxLength = 1000) {
+        return value
+            .trim()
+            .replace(/<[^>]*>/g, '')      // elimina etiquetas HTML
+            .replace(/[<>"'`]/g, '')       // elimina caracteres peligrosos restantes
+            .substring(0, maxLength);
+    }
+
     // Metodo para emitir el estado de los eventos input
     _isCompletedInput(inputID) {
         const input = this.shadowRoot.getElementById(inputID);
@@ -267,14 +276,15 @@ export class FormContact extends LitElement {
                 <div class="form-group">
                     <label for="name-input">${userIcon} Nombre:</label>
                     
-                    <input 
-                        @input=${() => this._isCompletedInput("name-input")} 
-                        data-index="${0}" 
-                        type="text" 
-                        id="name-input" 
-                        name="name-input" 
-                        aria-describedby="name-input-error" 
+                    <input
+                        @input=${() => this._isCompletedInput("name-input")}
+                        data-index="${0}"
+                        type="text"
+                        id="name-input"
+                        name="name-input"
+                        aria-describedby="name-input-error"
                         required
+                        maxlength="100"
                         title="Por favor, ingrese un nombre valido usando solo letras."
                     >
                     <span id="name-input-error" class="error-message"></span>
@@ -283,14 +293,15 @@ export class FormContact extends LitElement {
                 <!--Campo para el correo electronico del usuario-->
                 <div class="form-group">
                     <label for="email-input">${emailIcon} Correo:</label>
-                    <input 
-                        id="email-input" 
-                        data-index="${1}" 
-                        @input=${() => this._isCompletedInput("email-input")} 
-                        type="email" 
-                        name="email-input" 
-                        aria-describedby="email-input-error" 
+                    <input
+                        id="email-input"
+                        data-index="${1}"
+                        @input=${() => this._isCompletedInput("email-input")}
+                        type="email"
+                        name="email-input"
+                        aria-describedby="email-input-error"
                         required
+                        maxlength="254"
                         title="Por favor, ingrese un correo valido."
                     >
                     <span id="email-input-error" class="error-message"></span>
@@ -299,20 +310,30 @@ export class FormContact extends LitElement {
                 <!--Campo para el mensaje del usuario-->
                 <div class="form-group">
                     <label for="message-input">${messageIcon} Mensaje:</label>
-                    <textarea 
-                        id="message-input" 
-                        data-index="${2}" 
-                        @input=${() => this._isCompletedInput("message-input")} 
-                        name="message-input" 
-                        rows="2" aria-describedby="message-input-error" 
+                    <textarea
+                        id="message-input"
+                        data-index="${2}"
+                        @input=${() => this._isCompletedInput("message-input")}
+                        name="message-input"
+                        rows="2"
+                        aria-describedby="message-input-error"
                         required
+                        maxlength="2000"
                         title="Por favor, ingrese su mensaje."
                     ></textarea>
                     <span id="message-input-error" class="error-message"></span>
                 </div>
 
-                <!-- Recaptcha de google -->
-                <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+                <!-- Honeypot antispam: campo invisible — los bots lo rellenan, los humanos no -->
+                <input
+                    type="text"
+                    id="hp-field"
+                    name="website"
+                    autocomplete="off"
+                    tabindex="-1"
+                    aria-hidden="true"
+                    style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;"
+                >
 
                 <!-- Boton para enviar el formulario -->
                 <button id="submit" @click=${this._sendForm} type="submit" ?disabled="${!this._isEnable}">Enviar</button>
@@ -320,91 +341,89 @@ export class FormContact extends LitElement {
         `;
     }
 
-    _sendForm () {
-        this._form = this.shadowRoot.querySelector("form");
-        this._nameInput = this.shadowRoot.getElementById("name-input");
+    async _sendForm(event) {
+        event.preventDefault();
+
+        this._form       = this.shadowRoot.querySelector("form");
+        this._nameInput  = this.shadowRoot.getElementById("name-input");
         this._emailInput = this.shadowRoot.getElementById("email-input");
         this._messageInput = this.shadowRoot.getElementById("message-input");
-        this._submitBtn = this.shadowRoot.getElementById("submit");
+        this._submitBtn  = this.shadowRoot.getElementById("submit");
 
-        this._form.addEventListener("submit", (event) => {
-            // evitamos que el formulario se envie por defecto.
-            event.preventDefault();
+        // — Honeypot: si el campo oculto tiene valor, es un bot —
+        const honeypot = this.shadowRoot.getElementById("hp-field");
+        if (honeypot && honeypot.value !== '') {
+            // silenciosamente "fingimos" éxito para no alertar al bot
+            this._showNotification('sent', this._notificationMessageSent);
+            this._form.reset();
+            return;
+        }
 
-            // obtenemos el div que mostrara los errores en el formulario y lo iniciamos vacio.
-            let errorsDiv = this.shadowRoot.getElementById("errors");
-            errorsDiv.innerHTML = "";
+        // — Limpiar errores previos —
+        const errorsDiv = this.shadowRoot.getElementById("errors");
+        errorsDiv.innerHTML = "";
 
-            // Obtenemos los errores
-            if (!this._form.checkVisibility()) {
-                // iteramos en los elementos principales del formulario con "elements"
-                [...this._form.elements].forEach((input) => {
-                    // validamos que el input este vacio
-                    if (!input.checkValidity()) {
-                        // obtenemos el span de cada elemento
-                        let errorSpan = this.shadowRoot.getElementById(`${input.id}-error`);
-                        // a su span le agregamos el mensaje de error que tiene el input por estar vacio.
-                        errorSpan.textContent = input.validationMessage;
-                        // le asignamos la clase "error" al input
-                        input.classList.add("error");
-                    }
-                });
-                return;
-            };
-
-            const base = "app72qPFLrR2Asym4";
-            const table = "tblAR3XGRyj3JdDEm";
-            const token = "patOAfocbV4jBXfup.1c8b0a18eff5467231fce879664f5e5285a4207824a0d63428bf367f94a57483";
-            const airtableURL = `https://api.airtable.com/v0/${base}/${table}`;
-
-            let clientName = this._nameInput.value;
-            let clientEmail = this._emailInput.value;
-            let clientSource = this._detectDevice();
-            let clientDate = this._getDatePanama();
-            let clientMessage = this._messageInput.value;
-
-            // estructura de datos para Airtable
-            const clientData = {
-                records: [
-                    {
-                        fields: {
-                            name: clientName,
-                            email: clientEmail,
-                            source: clientSource,
-                            date: clientDate,
-                            message: clientMessage,
-                        },
-                    },
-                ],
-            };
-
-            const headers = {
-                method: "POST", // Método de la solicitud (GET, POST, etc.)
-                headers: {
-                    Authorization: `Bearer ${token}`, // Encabezado de autorización con el token
-                    "Content-Type": "application/json", // Tipo de contenido
-                },
-                body: JSON.stringify(clientData),
-            };
-
-            try {
-                // capturamos los datos para enviarse
-                fetch(airtableURL, headers)
-                    .then((res) => {
-                        // validamos que si hay un error
-                        if (!res.ok) throw new Error("Nope");
-                        return res.json();
-                    });
-
-                // reseteamos el formulario
-                this._showNotification('sent', this._notificationMessageSent);
-                this._form.reset();
-            } catch (error) {
-                // mostramos el error en el modal de notificaciones
-                this._showNotification('error', this._notificationMessageError);
-                console.error(error);
+        // — Validación HTML5 —
+        let hasErrors = false;
+        [...this._form.elements].forEach((input) => {
+            if (input.id && !input.checkValidity()) {
+                const errorSpan = this.shadowRoot.getElementById(`${input.id}-error`);
+                if (errorSpan) errorSpan.textContent = input.validationMessage;
+                input.classList.add("error");
+                hasErrors = true;
             }
         });
+        if (hasErrors) return;
+
+        // — Sanitizar valores antes de enviar —
+        const clientName    = this._sanitize(this._nameInput.value, 100);
+        const clientEmail   = this._sanitize(this._emailInput.value, 254);
+        const clientMessage = this._sanitize(this._messageInput.value, 2000);
+        const clientSource  = this._detectDevice();
+        const clientDate    = this._getDatePanama();
+
+        const base  = import.meta.env.VITE_AIRTABLE_CONTACT_BASE;
+        const table = import.meta.env.VITE_AIRTABLE_CONTACT_TABLE;
+        const token = import.meta.env.VITE_AIRTABLE_CONTACT_TOKEN;
+        const airtableURL = `https://api.airtable.com/v0/${base}/${table}`;
+
+        const clientData = {
+            records: [{
+                fields: {
+                    name: clientName,
+                    email: clientEmail,
+                    source: clientSource,
+                    date: clientDate,
+                    message: clientMessage,
+                },
+            }],
+        };
+
+        // — Deshabilitar botón durante el envío —
+        this._submitBtn.disabled = true;
+
+        try {
+            const res = await fetch(airtableURL, {
+                method: "POST",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(clientData),
+            });
+
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+            this._showNotification('sent', this._notificationMessageSent);
+            this._form.reset();
+            this._validationStates = [];
+            this._isEnable = false;
+        } catch (error) {
+            this._showNotification('error', this._notificationMessageError);
+            console.error(error);
+        } finally {
+            this._submitBtn.disabled = false;
+        }
     }
 }
 customElements.define('form-contact', FormContact);

@@ -3,3 +3,8 @@ node_modules
 .vs
 .vscode
 dist
+
+# Variables de entorno — NUNCA commitear
+.env
+.env.local
+.env.*.local
