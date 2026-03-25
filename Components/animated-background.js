@@ -1,6 +1,6 @@
 
 // import { LitElement, html, css } from 'lit';
-import { LitElement, html, css } from "https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js";
+import { LitElement, html, css } from 'lit';
 
 export class AnimatedBackground extends LitElement {
     static get styles() {
@@ -58,11 +58,19 @@ export class AnimatedBackground extends LitElement {
                 background: var(--dark);
                 animation: move-up 8s infinite ease-in-out;
             }
-        
+
             .circle.down {
                 top: 0;
                 background: var(--light);
                 animation: move-down 8s infinite ease-in-out;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                .circle.up,
+                .circle.down {
+                    animation: none;
+                    opacity: 0.15;
+                }
             }
         `;}
 

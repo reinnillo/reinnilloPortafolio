@@ -171,6 +171,18 @@
     }
 }
 
+/* Respetar preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .cap-circle {
+        animation: none !important;
+    }
+    .carousel-track,
+    [style*="animation"] {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
 /* Animar el circulo del perfil*/
 @keyframes move-around {
     0% {

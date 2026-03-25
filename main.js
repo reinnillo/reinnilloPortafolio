@@ -45,29 +45,30 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
 
-            // Obtener el atributo data-target
-            const targetId = link.getAttribute("data-target"); // el nombre que tiene el ID
-            const targetSection = document.getElementById(targetId); // buscar el elemento por el ID
-
-            // Eliminar la clase active de todas las secciones
-            sections.forEach((section) => {
-                section.classList.remove("active");
-            });
-
-            // Añadir la clase active a la sección objetivo
-            targetSection.classList.add("active");
-
-            // Calcular la posición de la sección objetivo y desplazar todas las secciones
+            const targetId = link.getAttribute("data-target");
+            const targetSection = document.getElementById(targetId);
             const targetIndex = Array.from(sections).indexOf(targetSection);
-            sections.forEach((section, index) => {
-                if (targetIndex === index) {
-                    section.style.transform = `translateX(-${targetIndex * 100}vw) scale(1)`;
-                    section.style.opacity = "1";
-                } else {
-                    section.style.transform = `translateX(-${targetIndex * 100}vw) scale(0.5)`;
-                    section.style.opacity = "0.2";
-                }
-            });
+
+            const doNavigation = () => {
+                sections.forEach((section) => section.classList.remove("active"));
+                targetSection.classList.add("active");
+                sections.forEach((section, index) => {
+                    if (targetIndex === index) {
+                        section.style.transform = `translateX(-${targetIndex * 100}vw) scale(1)`;
+                        section.style.opacity = "1";
+                    } else {
+                        section.style.transform = `translateX(-${targetIndex * 100}vw) scale(0.5)`;
+                        section.style.opacity = "0.2";
+                    }
+                });
+            };
+
+            // View Transitions API — fallback automático si no está disponible
+            if (!document.startViewTransition) {
+                doNavigation();
+                return;
+            }
+            document.startViewTransition(() => doNavigation());
         });
     });
 
