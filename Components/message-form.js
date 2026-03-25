@@ -5,8 +5,7 @@ export class MessageForm extends LitElement {
     static styles = [
         css`
             :host {
-                display: flex;
-                justify-content: center;
+                /* Popover API sets display:none when closed — do not override here */
                 width: 60vw;
                 height: auto;
                 overflow: hidden;
@@ -15,7 +14,11 @@ export class MessageForm extends LitElement {
                 border-radius: var(--b-radius-large);
                 border: none;
                 padding: 0;
-                /* Popover API oculta el elemento por defecto con display:none */
+            }
+
+            :host(:popover-open) {
+                display: flex;
+                justify-content: center;
             }
 
             /* Backdrop nativo del Popover — sin JS extra */
