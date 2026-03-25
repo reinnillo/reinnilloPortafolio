@@ -404,7 +404,7 @@ class SideModal extends LitElement {
                                 <ul class="icon-container">
                                     ${this.ProfileContact.map((icon, index) => html`
                                         <li class="icon">
-                                            <a target="_BLANK" href="${icon.href}" data-index="${index}" @mouseover=${this._showSpan}>
+                                            <a target="_blank" rel="noopener noreferrer" href="${icon.href}" data-index="${index}" @mouseover=${this._showSpan}>
                                                 ${icon.icon}
                                             </a>
                                         </li>

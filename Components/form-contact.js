@@ -163,6 +163,7 @@ export class FormContact extends LitElement {
         _arrayInputData: { type: Array },
         _validationStates: { type: Array },
         _isEnable: { type: Boolean },
+        _cooldownSeconds: { type: Number },
         _notificationMessageSent: { type: String },
         _notificationMessageError: { type: String },
     }
@@ -182,6 +183,20 @@ export class FormContact extends LitElement {
         this._messageInput = null;
         this._submitBtn = null;
         this._isEnable;
+        this._cooldownSeconds = 0;
+        this._cooldownTimer = null;
+    }
+
+    // Cooldown de 60s tras envío exitoso para evitar spam
+    _startCooldown(seconds = 60) {
+        this._cooldownSeconds = seconds;
+        this._cooldownTimer = setInterval(() => {
+            this._cooldownSeconds -= 1;
+            if (this._cooldownSeconds <= 0) {
+                clearInterval(this._cooldownTimer);
+                this._cooldownSeconds = 0;
+            }
+        }, 1000);
     }
 
     // Metodo para insertar el estado de los input en el Array de estados
@@ -336,7 +351,9 @@ export class FormContact extends LitElement {
                 >
 
                 <!-- Boton para enviar el formulario -->
-                <button id="submit" @click=${this._sendForm} type="submit" ?disabled="${!this._isEnable}">Enviar</button>
+                <button id="submit" @click=${this._sendForm} type="submit" ?disabled="${!this._isEnable || this._cooldownSeconds > 0}">
+                    ${this._cooldownSeconds > 0 ? `Espera ${this._cooldownSeconds}s` : 'Enviar'}
+                </button>
             </form>
         `;
     }
@@ -418,6 +435,7 @@ export class FormContact extends LitElement {
             this._form.reset();
             this._validationStates = [];
             this._isEnable = false;
+            this._startCooldown(60);
         } catch (error) {
             this._showNotification('error', this._notificationMessageError);
             console.error(error);

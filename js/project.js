@@ -20,8 +20,8 @@ const createButton = (href, className )=> {
     button.classList.add(className);
     button.classList.add('button');
     button.href = href;
-    button.rel = 'noopener';
-    button.target = 'blank';
+    button.rel = 'noopener noreferrer';
+    button.target = '_blank';
     return button;
 }
 // CREACIONES PARA DESKTOP

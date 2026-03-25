@@ -121,7 +121,7 @@ class FaqSocialReviews extends LitElement {
             <div class="social-icons">
                 ${ProfileContact.map(social => html`
                     ${social.name === 'Instagram' || social.name === 'Linkedin' || social.name === 'GitHub' ? html`
-                        <a class="social-icon" href="${social.href}" alt="${social.name} de Alexander Reina Pinillo">${social.icon}</a>
+                        <a class="social-icon" href="${social.href}" target="_blank" rel="noopener noreferrer" aria-label="${social.name} de Alexander Reina Pinillo">${social.icon}</a>
                     ` : ''}
                 `)}
             </div>
