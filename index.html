@@ -15,7 +15,7 @@
     <!-- Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'self';
-        script-src 'self' https://cdn.jsdelivr.net https://cdn.botpress.cloud https://mediafiles.botpress.cloud;
+        script-src 'self' https://cdn.botpress.cloud https://mediafiles.botpress.cloud;
         style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
         font-src 'self' https://fonts.gstatic.com;
         img-src 'self' data: blob: https://res.cloudinary.com https://dl.airtable.com https://v5.airtableusercontent.com;
@@ -59,14 +59,28 @@
           "@context": "https://schema.org",
           "@type": "Person",
           "name": "Alexander Reina Pinillo",
+          "alternateName": "reinnillo",
           "url": "https://reinnillo.github.io/reinnilloPortafolio/",
-          "image": "/asset/img/profile/alex.webp",
+          "image": "https://reinnillo.github.io/reinnilloPortafolio/asset/img/profile/alex.webp",
+          "email": "mailto:30todev@gmail.com",
+          "description": "Desarrollador front-end especializado en creación de páginas web y asistentes virtuales con IA integrada. Enfoque creativo y disciplinado.",
+          "jobTitle": "Front-End Developer & Bot AI Crafter",
+          "knowsAbout": ["HTML", "CSS", "JavaScript", "LitElement", "Web Components", "Vite", "Airtable", "Bot AI", "UX/UI"],
+          "nationality": {
+            "@type": "Country",
+            "name": "Panamá"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Santiago de Veraguas",
+            "addressCountry": "PA"
+          },
           "sameAs": [
             "https://www.instagram.com/reinnillo/",
             "https://x.com/reinnill0",
-            "https://www.linkedin.com/in/alexander-d-reina-p-737626318/?originalSubdomain=pa"
+            "https://www.linkedin.com/in/alexander-d-reina-p-737626318/",
+            "https://github.com/reinnillo/"
           ],
-          "jobTitle": "front-end developer, Bot AI Crafting",
           "worksFor": {
             "@type": "Organization",
             "name": "reinnillo"
@@ -76,6 +90,8 @@
 </head>
 
 <body>
+    <a href="#home" class="skip-link">Saltar al contenido principal</a>
+
     <!-- lit component -->
     <notification-modal></notification-modal>
     <animated-background></animated-background>
