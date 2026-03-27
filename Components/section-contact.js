@@ -12,10 +12,10 @@ export class SectionContact extends LitElement {
                 align-items: start;
                 gap: 2rem;
             }
-            /* 1 */    
+            /* 1 */
             .title-contact {
                 grid-column: span 2 / span 2;
-                font-size: 4rem;
+                font-size: clamp(1.6rem, 5vw, 4rem);
             }
             /* 2 */ 
             .cards-contact {
@@ -41,17 +41,17 @@ margin: 2rem 0;
                 flex-direction: column;
             }
             .form .title-formulary {
-                font-size: 2rem;
+                font-size: clamp(1.2rem, 3vw, 2rem);
             }
             .form form-contact {
                 width: 80%;
             }
 
-            /* 4 */ 
+            /* 4 */
             .title-experience-methods {
                 grid-column: span 2 / span 2;
                 grid-row-start: 4;
-                font-size: 3rem;
+                font-size: clamp(1.4rem, 4vw, 3rem);
             }
             /* 5 */ 
             faq-social-reviews {

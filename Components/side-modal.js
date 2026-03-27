@@ -280,6 +280,26 @@ class SideModal extends LitElement {
             .filter-content {
                 overflow-y: auto;
                 padding: 0.5rem;
+                scrollbar-width: thin;
+                scrollbar-color: var(--light) var(--dark);
+            }
+
+            .filter-content::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            .filter-content::-webkit-scrollbar-track {
+                background: var(--dark);
+                border-radius: 3px;
+            }
+
+            .filter-content::-webkit-scrollbar-thumb {
+                background: var(--light);
+                border-radius: 3px;
+            }
+
+            .filter-content::-webkit-scrollbar-thumb:hover {
+                background: var(--light-hover);
             }
             .filter-content .active {
                 font-size: 1rem;
@@ -296,6 +316,26 @@ class SideModal extends LitElement {
             .info {
                 overflow-y: scroll;
                 height: max-content;
+                scrollbar-width: thin;
+                scrollbar-color: var(--light) var(--dark);
+            }
+
+            .info::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            .info::-webkit-scrollbar-track {
+                background: var(--dark);
+                border-radius: 3px;
+            }
+
+            .info::-webkit-scrollbar-thumb {
+                background: var(--light);
+                border-radius: 3px;
+            }
+
+            .info::-webkit-scrollbar-thumb:hover {
+                background: var(--light-hover);
             }
             .info #info-heading {
                 height: auto;

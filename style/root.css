@@ -195,3 +195,28 @@ html {
     }
   }
 }
+
+/* ── Scrollbar global ── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--light) var(--dark);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark);
+  border-radius: var(--b-radius-small);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light);
+  border-radius: var(--b-radius-small);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--light-hover);
+}
