@@ -55,6 +55,5 @@ export const skills = [
     { skill: 'React', level: 30},
     { skill: 'Python', level: 25},
     { skill: 'SQL', level: 25},
-    { skill: 'Botpress', level: 90},
     { skill: 'Wix Studio', level: 50},
 ];
